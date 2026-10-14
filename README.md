@@ -109,6 +109,7 @@ archivado) antes de darlos por buenos.
 | `scripts/parse-archive-issue.mjs` | Valida un issue "Archivar animal" y mueve la ficha al archivo. |
 | `shelters.json` | Lista de protectoras: `username`, `name`, `zone`, `instagramUrl` + contacto, solo para el directorio en `/protectoras/`. |
 | `data/colonias.json` | Colonias felinas y, dentro de ellas, sus puntos de alimentación autorizados; lo pinta `/mapa-colonias/` (edición manual). |
+| `fonts/` | Tipografía Outfit (latin, pesos 300–800, `.woff2`) alojada en el propio sitio: no se hacen peticiones a Google Fonts (RGPD). |
 | `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo; se enlazan desde `puntoAlimentacion.fotos` en `data/colonias.json`. |
 | `data/animales-recogidos.json` | Fichas del servicio municipal de recogida que pinta la portada (`/`) (edición manual o por issue). |
 | `data/archivo.json` | Fichas retiradas de la portada, con enlace a su issue original, que pinta `/archivo/`. |
