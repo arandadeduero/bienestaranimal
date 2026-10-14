@@ -1,0 +1,40 @@
+mapa-colonias/index.html
+  s_c49c567ee1322d::t_41496374785122 29
+  s_c49c567ee1322d::t_be68e2bbec91a5 112
+data/puntos-alimentacion.json
+  s_c49c567ee1322d::t_e05d9e3354cbcb 7-11,18-22,29-33,40-44,51-55,62-66
+info/index.html
+  s_c49c567ee1322d::t_1544517ea7a245 126-140,142-143
+  s_c49c567ee1322d::t_41496374785122 28
+README.md
+  s_c49c567ee1322d::t_41496374785122 46-48,113,117
+protectoras/index.html
+  s_c49c567ee1322d::t_41496374785122 28
+colonias-map.js
+  s_c49c567ee1322d::t_be68e2bbec91a5 51,56-62,109,114
+  s_c49c567ee1322d::t_5a33c88c4619de 39-40,42,46-47
+  s_c49c567ee1322d::t_7c0eef1b3f65c6 41
+index.html
+  s_c49c567ee1322d::t_41496374785122 27
+styles.css
+  s_c49c567ee1322d::t_41496374785122 306-307
+  s_c49c567ee1322d::t_d0c2f1d7a2c10f 449-459
+archivo/index.html
+  s_c49c567ee1322d::t_41496374785122 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "31d0bc5bcb7d2f210cd0996f043dd2bacfeb0550",
+  "prompts": {},
+  "sessions": {
+    "s_c49c567ee1322d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc90a599-8ca3-45fb-a819-2e685910cc22",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
