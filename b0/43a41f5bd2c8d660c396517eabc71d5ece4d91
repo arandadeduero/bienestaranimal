@@ -1,0 +1,61 @@
+.github/workflows/animal-issue.yml
+  s_c49c567ee1322d::t_cc522a0836fbe5 92
+index.html
+  s_c49c567ee1322d::t_0f7085e4af05f7 27,106-107
+  s_c49c567ee1322d::t_cc522a0836fbe5 6,8,10,12,14-15,20,22,33,36,90
+analytics.js
+  s_c49c567ee1322d::t_cc522a0836fbe5 5
+.github/workflows/issue-flow-closed.yml
+  s_c49c567ee1322d::t_cc522a0836fbe5 42,49
+archivo.js
+  s_c49c567ee1322d::t_cc522a0836fbe5 1
+CNAME
+  s_c49c567ee1322d::t_cc522a0836fbe5 1
+scripts/parse-archive-issue.mjs
+  s_c49c567ee1322d::t_cc522a0836fbe5 2
+styles.css
+  s_c49c567ee1322d::t_cc522a0836fbe5 1
+info/index.html
+  s_c49c567ee1322d::t_0f7085e4af05f7 28,171-172
+  s_c49c567ee1322d::t_cc522a0836fbe5 7,9,11,13,15-16,21,23,34,37,64,156
+archivo/index.html
+  s_c49c567ee1322d::t_cc522a0836fbe5 7,9,11,13,15-16,21,23,34,37,77
+  s_c49c567ee1322d::t_0f7085e4af05f7 28,92-94
+colonias-map.js
+  s_c49c567ee1322d::t_cc522a0836fbe5 1
+.github/workflows/archive-issue.yml
+  s_c49c567ee1322d::t_cc522a0836fbe5 88
+README.md
+  s_c49c567ee1322d::t_0f7085e4af05f7 167
+  s_c49c567ee1322d::t_cc522a0836fbe5 1,7,148,162
+mapa-colonias/index.html
+  s_c49c567ee1322d::t_0f7085e4af05f7 29,113-115
+  s_c49c567ee1322d::t_cc522a0836fbe5 7,9,11,13,15-16,21,23,35,38,96
+scripts/parse-animal-issue.mjs
+  s_c49c567ee1322d::t_cc522a0836fbe5 2
+.claude/launch.json
+  s_c49c567ee1322d::t_cc522a0836fbe5 5
+CLAUDE.md
+  s_c49c567ee1322d::t_cc522a0836fbe5 1,28
+protectoras/index.html
+  s_c49c567ee1322d::t_0f7085e4af05f7 28,91-92
+  s_c49c567ee1322d::t_cc522a0836fbe5 7-9,11,13-16,21,23,34,37,76
+scripts/lib.mjs
+  s_c49c567ee1322d::t_cc522a0836fbe5 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b043a41f5bd2c8d660c396517eabc71d5ece4d91",
+  "prompts": {},
+  "sessions": {
+    "s_c49c567ee1322d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc90a599-8ca3-45fb-a819-2e685910cc22",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
