@@ -1,0 +1,21 @@
+data/puntos-alimentacion.json
+  s_c49c567ee1322d::t_cdc43ec7f08572 73-77
+mapa-colonias/index.html
+  s_c49c567ee1322d::t_cdc43ec7f08572 112
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "52dc1c743d7197852982a561556c69fd2a9f8dfe",
+  "prompts": {},
+  "sessions": {
+    "s_c49c567ee1322d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc90a599-8ca3-45fb-a819-2e685910cc22",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
