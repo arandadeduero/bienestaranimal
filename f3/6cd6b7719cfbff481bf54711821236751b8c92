@@ -1,0 +1,19 @@
+CLAUDE.md
+  s_c49c567ee1322d::t_3ecb6861fe89a5 20-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f36cd6b7719cfbff481bf54711821236751b8c92",
+  "prompts": {},
+  "sessions": {
+    "s_c49c567ee1322d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc90a599-8ca3-45fb-a819-2e685910cc22",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
