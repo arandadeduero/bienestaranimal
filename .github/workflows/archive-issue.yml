@@ -88,7 +88,8 @@ jobs:
           git config user.name "peluditos-bot"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add data/animales-recogidos.json data/archivo.json
+          node scripts/bump-data-version.mjs recogidas.js archivo.js
+          git add data/animales-recogidos.json data/archivo.json recogidas.js archivo.js index.html archivo/index.html
           git commit -m "Archivar ficha ${POST_ID} (issue #${ISSUE_NUMBER})"
           git push -u origin "$BRANCH" --force
 

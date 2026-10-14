@@ -13,7 +13,10 @@
     return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
   };
 
-  fetch('data/archivo.json')
+  // Subir DATA_VERSION cada vez que cambie data/archivo.json (lo hace solo el workflow de archivado):
+  // el JSON se cachea en Cloudflare/GitHub Pages y sin versión se verían datos antiguos.
+  const DATA_VERSION = 1;
+  fetch(`data/archivo.json?v=${DATA_VERSION}`)
     .then((r) => (r.ok ? r.json() : []))
     .then((data) => {
       const items = Array.isArray(data) ? data : [];

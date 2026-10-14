@@ -7,7 +7,10 @@
     return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
   };
 
-  fetch('data/animales-recogidos.json')
+  // Subir DATA_VERSION cada vez que cambie data/animales-recogidos.json (lo hacen solos los
+  // workflows de alta y archivado): el JSON se cachea y sin versión se verían datos antiguos.
+  const DATA_VERSION = 1;
+  fetch(`data/animales-recogidos.json?v=${DATA_VERSION}`)
     .then((r) => (r.ok ? r.json() : []))
     .then((animales) => {
       const wrap = document.getElementById('recogidas');

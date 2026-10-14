@@ -18,6 +18,10 @@ un `.js`, un `.json` o un `.css`, hay que subir su versión en el mismo commit:*
 
 Antes de commitear, comprobar que no queda ninguna referencia con la versión vieja.
 
+Los JSON que modifican los workflows de issues (`animales-recogidos.json`, `archivo.json`) los versiona
+el propio workflow con `scripts/bump-data-version.mjs` (sube `DATA_VERSION` y el `?v=` del HTML en la
+misma PR). Si se añade un JSON nuevo que toque un workflow, hay que llamar a ese script también.
+
 ## Contexto del proyecto
 
 - Web del Ayuntamiento de Aranda de Duero. Rama por defecto `aranda`; cada push despliega

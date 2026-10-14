@@ -92,7 +92,8 @@ jobs:
           git config user.name "peluditos-bot"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add data/animales-recogidos.json "img/${POST_ID}.jpg"
+          node scripts/bump-data-version.mjs recogidas.js
+          git add data/animales-recogidos.json recogidas.js index.html "img/${POST_ID}.jpg"
           git commit -m "Nueva ficha desde issue #${ISSUE_NUMBER}"
           git push -u origin "$BRANCH" --force
 
