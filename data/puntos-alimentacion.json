@@ -70,6 +70,10 @@
     "nombre": "Avenida General Gutiérrez",
     "ubicacion": "En los árboles situados a la altura del cruce con la calle Pisuerga",
     "lat": 41.6569748,
-    "lng": -3.6927252
+    "lng": -3.6927252,
+    "fotos": [
+      "img/puntos-alimentacion/pa-07-1.jpg",
+      "img/puntos-alimentacion/pa-07-2.jpg"
+    ]
   }
 ]
