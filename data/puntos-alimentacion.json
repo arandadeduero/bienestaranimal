@@ -4,42 +4,66 @@
     "nombre": "Cementerio Viejo",
     "ubicacion": "En las traseras del antiguo invernadero municipal",
     "lat": 41.6815483,
-    "lng": -3.703963
+    "lng": -3.703963,
+    "fotos": [
+      "img/puntos-alimentacion/pa-01-1.jpg",
+      "img/puntos-alimentacion/pa-01-2.jpg"
+    ]
   },
   {
     "id": "pa-02",
     "nombre": "Parking Sol de las Moreras",
     "ubicacion": "Junto al muro lateral del aparcamiento, a la derecha de la puerta de entrada",
     "lat": 41.6693848,
-    "lng": -3.682893
+    "lng": -3.682893,
+    "fotos": [
+      "img/puntos-alimentacion/pa-02-1.jpg",
+      "img/puntos-alimentacion/pa-02-2.jpg"
+    ]
   },
   {
     "id": "pa-03",
     "nombre": "Plaza Claret",
     "ubicacion": "En los jardines situados frente a la academia Artedan",
     "lat": 41.6682893,
-    "lng": -3.6865039
+    "lng": -3.6865039,
+    "fotos": [
+      "img/puntos-alimentacion/pa-03-1.jpg",
+      "img/puntos-alimentacion/pa-03-2.jpg"
+    ]
   },
   {
     "id": "pa-04",
     "nombre": "Puente Bigar",
     "ubicacion": "En la bajada al parque Picón, a la izquierda del camino",
     "lat": 41.6687579,
-    "lng": -3.6871766
+    "lng": -3.6871766,
+    "fotos": [
+      "img/puntos-alimentacion/pa-04-1.jpg",
+      "img/puntos-alimentacion/pa-04-2.jpg"
+    ]
   },
   {
     "id": "pa-05",
     "nombre": "Parque de la Huerta",
     "ubicacion": "En el muro situado a la izquierda del camino de entrada de vehículos",
     "lat": 41.6683627,
-    "lng": -3.6792756
+    "lng": -3.6792756,
+    "fotos": [
+      "img/puntos-alimentacion/pa-05-1.jpg",
+      "img/puntos-alimentacion/pa-05-2.jpg"
+    ]
   },
   {
     "id": "pa-06",
     "nombre": "Bodega elaboradora Tierra Aranda",
     "ubicacion": "Junto a la valla de la bodega",
     "lat": 41.6799904,
-    "lng": -3.6840362
+    "lng": -3.6840362,
+    "fotos": [
+      "img/puntos-alimentacion/pa-06-1.jpg",
+      "img/puntos-alimentacion/pa-06-2.jpg"
+    ]
   },
   {
     "id": "pa-07",

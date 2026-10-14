@@ -43,8 +43,9 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
   autorizados** (cajones de madera de ASADEMA instalados por el Ayuntamiento con FeliniSave, 7 en
   la primera fase de octubre de 2026), con su propia lista debajo. Datos en
   [`data/puntos-alimentacion.json`](data/puntos-alimentacion.json) (un array de objetos
-  `{id, nombre, ubicacion, lat, lng}`), geolocalizados con Nominatim a partir de la nota de prensa
-  del Ayuntamiento.
+  `{id, nombre, ubicacion, lat, lng, fotos}`), geolocalizados con Nominatim a partir de la nota de
+  prensa del Ayuntamiento. `fotos` (opcional) son rutas a `img/puntos-alimentacion/<id>-<n>.jpg`,
+  que se muestran en el popup del marcador.
 - **Info** (`/info/`): 4 tarjetas de estadísticas reales del programa de colonias felinas (censo
   de FeliniSave, mayo 2025), un resumen del marco legal (Ley 7/2023) y el método CER, enlace de
   descarga a la presentación completa en PDF, una nota sobre los puntos de alimentación autorizados
@@ -109,10 +110,11 @@ archivado) antes de darlos por buenos.
 | `shelters.json` | Lista de protectoras: `username`, `name`, `zone`, `instagramUrl` + contacto, solo para el directorio en `/protectoras/`. |
 | `data/colonias.json` | Colonias felinas que pinta `/mapa-colonias/` (edición manual). |
 | `data/puntos-alimentacion.json` | Puntos de alimentación autorizados que pinta `/mapa-colonias/` junto a las colonias (edición manual). |
+| `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo. |
 | `data/animales-recogidos.json` | Fichas del servicio municipal de recogida que pinta la portada (`/`) (edición manual o por issue). |
 | `data/archivo.json` | Fichas retiradas de la portada, con enlace a su issue original, que pinta `/archivo/`. |
 | `img/` | `logo-web.jpg` (icono/marca), `og.jpg` (vista previa social), `placeholder.svg` (imagen de respaldo), `cartel-colonia-felina.jpg` (en `/info/`), `shelters/<username>.jpg` (logos de protectoras), `recogida-issue-<n>.jpg` (fotos añadidas por el flujo de issues). |
-| `docs/` | `gestion-colonias-felinas.pdf` (enlazado desde `/info/`) y `puntos-alimentacion-colonias-felinas.pdf` (nota de prensa, enlazada desde `/info/` y `/mapa-colonias/`). |
+| `docs/` | `gestion-colonias-felinas.pdf` (enlazado desde `/info/`) y `puntos-alimentacion-colonias-felinas.pdf` (nota de prensa, enlazada desde `/info/` y `/mapa-colonias/`) y `normas-alimentacion-responsable.pdf` (Anexo I, enlazado desde `/info/`). |
 | `.github/ISSUE_TEMPLATE/` | `nuevo-animal.yml` ("🐾 Animal recogido") y `archivar-animal.yml` ("🗄️ Archivar animal"): formularios para proponer/retirar una ficha desde un issue. |
 | `.github/workflows/` | `deploy-pages.yml` (despliega en cada push a `aranda`), `animal-issue.yml` + `archive-issue.yml` + `issue-flow-closed.yml` (fichas por issue). |
 

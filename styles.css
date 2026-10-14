@@ -303,6 +303,8 @@ main.container { padding-bottom: 3rem; }
   font-size: 1.2rem;
   color: var(--brand-800);
 }
+.info-block h3 { margin: 1.4rem 0 .6rem; font-family: var(--font-display); font-size: 1rem; color: var(--brand-700); }
+.info-block p { color: var(--slate-700); font-size: .92rem; line-height: 1.7; }
 .info-block ul { margin: 0; padding-left: 1.2rem; color: var(--slate-700); font-size: .92rem; line-height: 1.7; }
 .info-block li + li { margin-top: .6rem; }
 .info-block li strong { color: var(--ink); }
@@ -443,6 +445,17 @@ main.container { padding-bottom: 3rem; }
 }
 .map-legend__dot--colonia { background: var(--brand-100); }
 .map-legend__dot--punto { background: #ffe3b3; }
+
+.pa-photos { display: flex; gap: .4rem; margin-top: .6rem; }
+.pa-photos a { display: block; line-height: 0; }
+.pa-photos img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: .5rem;
+  border: 1px solid var(--line);
+  background: var(--brand-50);
+}
 
 .pa-marker {
   display: flex;

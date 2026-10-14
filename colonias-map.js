@@ -36,19 +36,30 @@
   }
 
   function popupHtmlPunto(p) {
+    const fotos = (Array.isArray(p.fotos) ? p.fotos : [])
+      .map((src, i) => `<a href="${escapeHtml(src)}" target="_blank" rel="noopener">` +
+        `<img src="${escapeHtml(src)}" alt="${escapeHtml(p.nombre)}, foto ${i + 1}" width="120" height="160"></a>`)
+      .join('');
     return `
       <strong>🍽️ ${escapeHtml(p.nombre)}</strong>
       ${p.ubicacion ? `<br><span>${escapeHtml(p.ubicacion)}</span>` : ''}
-      <br><span>Punto de alimentación autorizado para colonias felinas</span>`;
+      <br><span>Punto de alimentación autorizado para colonias felinas</span>
+      ${fotos ? `<div class="pa-photos">${fotos}</div>` : ''}`;
   }
 
   // Un <li> clicable que centra el mapa y abre el popup del marcador correspondiente.
-  function addFocusableItem(container, cls, marker, lat, lng, html) {
+  function addFocusableItem(container, cls, marker, lat, lng, html, offsetY = 40) {
     const li = document.createElement('li');
     li.className = cls;
     li.innerHTML = html;
     li.tabIndex = 0;
-    const focus = () => { map.setView([lat, lng], 17); marker.openPopup(); };
+    // El popup se abre encima del marcador: centramos el mapa `offsetY` px al norte para que el
+    // marcador quede por debajo del centro y el popup (más alto si lleva fotos) entre entero.
+    const focus = () => {
+      const target = map.unproject(map.project([lat, lng], 17).subtract([0, offsetY]), 17);
+      map.setView(target, 17, { animate: false });
+      marker.openPopup();
+    };
     li.addEventListener('click', focus);
     li.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focus(); } });
     container.appendChild(li);
@@ -95,12 +106,12 @@
         const hasCoords = typeof p.lat === 'number' && typeof p.lng === 'number';
         if (!hasCoords) continue;
         allBounds.push([p.lat, p.lng]);
-        const marker = L.marker([p.lat, p.lng], { icon: foodIcon }).addTo(map).bindPopup(popupHtmlPunto(p));
+        const marker = L.marker([p.lat, p.lng], { icon: foodIcon }).addTo(map).bindPopup(popupHtmlPunto(p), { maxWidth: 300, autoPanPadding: [20, 20], keepInView: true });
         if (paListEl) {
           const html = `
             <strong>🍽️ ${escapeHtml(p.nombre)}</strong>
             <span class="colonias-list__zone">${escapeHtml(p.ubicacion || '')}</span>`;
-          addFocusableItem(paListEl, 'colonias-list__item', marker, p.lat, p.lng, html);
+          addFocusableItem(paListEl, 'colonias-list__item', marker, p.lat, p.lng, html, 120);
         }
       }
     })
