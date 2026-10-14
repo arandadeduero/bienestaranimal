@@ -30,22 +30,22 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
 - **Protectoras** (`/protectoras/`): directorio informativo de cada entidad con logo y contacto
   público. Son protectoras y asociaciones independientes, sin relación con el Ayuntamiento — la
   página lo indica explícitamente.
-- **Mapa de colonias** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/) + teselas de
-  OpenStreetMap, sin API key) de las colonias felinas gestionadas por el Ayuntamiento, con lista
-  accesible debajo sincronizada con el mapa. Datos en [`data/colonias.json`](data/colonias.json)
-  (un array de objetos `{id, nombre, zona, lat, lng, numGatos, programa, estado, fechaAlta,
-  descripcion, contacto}`); 38 colonias reales (censo de FeliniSave, mayo 2025), geolocalizadas
-  con [Nominatim](https://nominatim.org/) y datos de OpenStreetMap. No tienen gestor individual
-  asignado. Los campos sin dato confirmado llevan el valor `"Desconocido"` (`colonias-map.js` lo
-  muestra como «Número de gatos no conocido» en `numGatos`, en vez de romper el formateo
-  numérico); una colonia sin `lat`/`lng` aparecería solo en la lista, sin marcador en el mapa.
-  El mismo mapa muestra además, con un marcador naranja distinto, los **puntos de alimentación
-  autorizados** (cajones de madera de ASADEMA instalados por el Ayuntamiento con FeliniSave, 7 en
-  la primera fase de octubre de 2026), con su propia lista debajo. Datos en
-  [`data/puntos-alimentacion.json`](data/puntos-alimentacion.json) (un array de objetos
-  `{id, nombre, ubicacion, lat, lng, fotos}`), geolocalizados con Nominatim a partir de la nota de
-  prensa del Ayuntamiento. `fotos` (opcional) son rutas a `img/puntos-alimentacion/<id>-<n>.jpg`,
-  que se muestran en el popup del marcador.
+- **Colonias y puntos de alimentación** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/)
+  + teselas de OpenStreetMap, sin API key) con **un único modelo: la colonia**. Si una colonia tiene
+  un punto de alimentación autorizado (los cajones de madera de ASADEMA que el Ayuntamiento instala
+  con FeliniSave; 7 en la primera fase de octubre de 2026), ese punto es lo principal: marcador
+  naranja numerado con el nº del cartel, ficha con sus fotos y listado propio arriba. El resto de
+  colonias del censo salen como punto azul discreto y en un listado de segundo nivel. Si un punto
+  autorizado no coincide con ninguna colonia del censo se **da por hecho que hay una colonia ahí**
+  (colonia "deducida"). Datos en [`data/colonias.json`](data/colonias.json), un array de
+  `{id, nombre, zona, lat, lng, numGatos, programa, estado, fechaAlta, descripcion, contacto,
+  puntoAlimentacion?}`, donde `puntoAlimentacion` es `{numero, nombre, ubicacion, fotos[]}`. 41
+  colonias: 38 del censo de FeliniSave (mayo 2025, geolocalizadas con
+  [Nominatim](https://nominatim.org/)) + 3 deducidas de su punto (nº 4, 6 y 7). Los campos sin dato
+  llevan `"Desconocido"` (se muestra «Número de gatos no conocido»). Las fotos son
+  `img/puntos-alimentacion/<id>-<n>.jpg`. Los puntos 1, 2, 3 y 5 se asociaron a su colonia del
+  censo por nombre y coordenadas; si alguna asociación no es correcta basta con editar
+  `data/colonias.json`.
 - **Info** (`/info/`): 4 tarjetas de estadísticas reales del programa de colonias felinas (censo
   de FeliniSave, mayo 2025), un resumen del marco legal (Ley 7/2023) y el método CER, enlace de
   descarga a la presentación completa en PDF, una nota sobre los puntos de alimentación autorizados
@@ -101,16 +101,15 @@ archivado) antes de darlos por buenos.
 | `index.html`, `archivo/`, `protectoras/`, `mapa-colonias/`, `info/` | Las cinco páginas (comparten `styles.css`). |
 | `nav.js` | Menú hamburguesa en móvil. |
 | `analytics.js` | Google Analytics 4 con consentimiento explícito (banner «Aceptar»/«Denegar»). |
-| `colonias-map.js` | Mapa de colonias felinas (Leaflet + OpenStreetMap) en `/mapa-colonias/`. |
+| `colonias-map.js` | Mapa y fichas de colonias y puntos de alimentación (Leaflet + OpenStreetMap) en `/mapa-colonias/`. |
 | `recogidas.js` | Fichas del servicio municipal de recogida en la portada (`/`). |
 | `archivo.js` | Listado enlazado a issues de GitHub en `/archivo/`. |
 | `scripts/lib.mjs` | `parseIssueBody`: parser línea a línea del cuerpo de un issue form. |
 | `scripts/parse-animal-issue.mjs` | Valida un issue "Animal recogido" y genera su ficha (ver arriba). |
 | `scripts/parse-archive-issue.mjs` | Valida un issue "Archivar animal" y mueve la ficha al archivo. |
 | `shelters.json` | Lista de protectoras: `username`, `name`, `zone`, `instagramUrl` + contacto, solo para el directorio en `/protectoras/`. |
-| `data/colonias.json` | Colonias felinas que pinta `/mapa-colonias/` (edición manual). |
-| `data/puntos-alimentacion.json` | Puntos de alimentación autorizados que pinta `/mapa-colonias/` junto a las colonias (edición manual). |
-| `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo. |
+| `data/colonias.json` | Colonias felinas y, dentro de ellas, sus puntos de alimentación autorizados; lo pinta `/mapa-colonias/` (edición manual). |
+| `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo; se enlazan desde `puntoAlimentacion.fotos` en `data/colonias.json`. |
 | `data/animales-recogidos.json` | Fichas del servicio municipal de recogida que pinta la portada (`/`) (edición manual o por issue). |
 | `data/archivo.json` | Fichas retiradas de la portada, con enlace a su issue original, que pinta `/archivo/`. |
 | `img/` | `logo-web.jpg` (icono/marca), `og.jpg` (vista previa social), `placeholder.svg` (imagen de respaldo), `cartel-colonia-felina.jpg` (en `/info/`), `shelters/<username>.jpg` (logos de protectoras), `recogida-issue-<n>.jpg` (fotos añadidas por el flujo de issues). |

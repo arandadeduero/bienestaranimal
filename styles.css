@@ -432,19 +432,38 @@ main.container { padding-bottom: 3rem; }
 .colonias-list__zone { color: var(--slate-500); }
 .colonias-list__nogeo { color: var(--slate-500); font-style: italic; font-size: .8rem; }
 
-.map-legend { display: flex; flex-wrap: wrap; gap: 1.1rem; margin: .9rem 0 0; font-size: .85rem; color: var(--slate-700); }
-.map-legend__item { display: flex; align-items: center; gap: .4rem; }
+.map-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin: .9rem 0 .7rem; font-size: .85rem; color: var(--slate-700); }
+.map-legend__item { display: flex; align-items: center; gap: .5rem; }
 .map-legend__dot {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.4rem;
-  height: 1.4rem;
+  flex: none;
   border-radius: 50%;
-  font-size: .85rem;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 }
-.map-legend__dot--colonia { background: var(--brand-100); }
-.map-legend__dot--punto { background: #ffe3b3; }
+.map-legend__dot--punto { width: 1.5rem; height: 1.5rem; background: #f59e0b; color: #fff; font-size: .75rem; font-weight: 800; }
+.map-legend__dot--colonia { width: .9rem; height: .9rem; background: var(--brand-500); }
+
+/* Marcador numerado de un punto de alimentación autorizado (Nº del cartel) */
+.map-pin--punto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #f59e0b;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+.popup-muted { color: var(--slate-500); font-size: .85em; }
 
 .pa-photos { display: flex; gap: .4rem; margin-top: .6rem; }
 .pa-photos a { display: block; line-height: 0; }
@@ -457,25 +476,51 @@ main.container { padding-bottom: 3rem; }
   background: var(--brand-50);
 }
 
-.pa-marker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: #ffb020;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
-  font-size: 15px;
-}
-
 .section-subtitle {
-  margin: 2.5rem 0 0;
+  margin: 2.5rem 0 .3rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--brand-800);
 }
+.section-lead { margin: 0 0 1rem; max-width: 68ch; font-size: .9rem; color: var(--slate-600); }
+
+/* Ficha de una colonia con punto de alimentación autorizado: lo principal de la página */
+.puntos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 1rem;
+}
+.punto-card {
+  display: flex;
+  gap: .9rem;
+  padding: .9rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+.punto-card:hover,
+.punto-card:focus-visible { box-shadow: var(--shadow-card-hover); outline: none; border-color: #f59e0b; }
+.punto-card__photos { display: flex; gap: .35rem; flex: none; }
+.punto-card__photos a { display: block; line-height: 0; }
+.punto-card__photos img {
+  width: 76px;
+  height: 101px;
+  object-fit: cover;
+  border-radius: .5rem;
+  border: 1px solid var(--line);
+  background: var(--brand-50);
+}
+.punto-card__body { display: flex; flex-direction: column; gap: .2rem; min-width: 0; font-size: .88rem; color: var(--slate-700); }
+.punto-card__body strong { color: var(--ink); font-size: 1rem; }
+.punto-card__num { color: #b45309; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 420px) { .punto-card { flex-direction: column; } .punto-card__photos img { width: 120px; height: 160px; } }
 .shelters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

@@ -163,8 +163,8 @@
     "id": "colonia-09",
     "nombre": "Parque La Huerta",
     "zona": "Desconocido",
-    "lat": 41.668363,
-    "lng": -3.679276,
+    "lat": 41.6683627,
+    "lng": -3.6792756,
     "numGatos": "Desconocido",
     "programa": "CER-M",
     "estado": "activa",
@@ -173,7 +173,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 5,
+      "nombre": "Parque de la Huerta",
+      "ubicacion": "En el muro situado a la izquierda del camino de entrada de vehículos",
+      "fotos": [
+        "img/puntos-alimentacion/pa-05-1.jpg",
+        "img/puntos-alimentacion/pa-05-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-10",
@@ -275,7 +284,7 @@
     "id": "colonia-16",
     "nombre": "Cementerio Viejo",
     "zona": "Desconocido",
-    "lat": 41.681548,
+    "lat": 41.6815483,
     "lng": -3.703963,
     "numGatos": "Desconocido",
     "programa": "CER-M",
@@ -285,7 +294,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 1,
+      "nombre": "Cementerio Viejo",
+      "ubicacion": "En las traseras del antiguo invernadero municipal",
+      "fotos": [
+        "img/puntos-alimentacion/pa-01-1.jpg",
+        "img/puntos-alimentacion/pa-01-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-17",
@@ -387,8 +405,8 @@
     "id": "colonia-23",
     "nombre": "Calle Padre Claret",
     "zona": "Desconocido",
-    "lat": 41.668289,
-    "lng": -3.686504,
+    "lat": 41.6682893,
+    "lng": -3.6865039,
     "numGatos": "Desconocido",
     "programa": "CER-M",
     "estado": "activa",
@@ -397,7 +415,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 3,
+      "nombre": "Plaza Claret",
+      "ubicacion": "En los jardines situados frente a la academia Artedan",
+      "fotos": [
+        "img/puntos-alimentacion/pa-03-1.jpg",
+        "img/puntos-alimentacion/pa-03-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-24",
@@ -419,7 +446,7 @@
     "id": "colonia-25",
     "nombre": "Callejón junto a parking Sol de las Moreras",
     "zona": "Santa Catalina",
-    "lat": 41.669385,
+    "lat": 41.6693848,
     "lng": -3.682893,
     "numGatos": "Desconocido",
     "programa": "CER-M",
@@ -429,7 +456,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 2,
+      "nombre": "Parking Sol de las Moreras",
+      "ubicacion": "Junto al muro lateral del aparcamiento, a la derecha de la puerta de entrada",
+      "fotos": [
+        "img/puntos-alimentacion/pa-02-1.jpg",
+        "img/puntos-alimentacion/pa-02-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-26",
@@ -606,5 +642,80 @@
       "email": "felinisave@gmail.com"
     },
     "descripcion": "Ubicación aproximada."
+  },
+  {
+    "id": "colonia-37",
+    "nombre": "Puente Bigar",
+    "zona": "Desconocido",
+    "lat": 41.6687579,
+    "lng": -3.6871766,
+    "numGatos": "Desconocido",
+    "programa": "CER-M",
+    "estado": "activa",
+    "fechaAlta": "Desconocido",
+    "contacto": {
+      "protectora": "FeliniSave",
+      "email": "felinisave@gmail.com"
+    },
+    "descripcion": "Colonia deducida de su punto de alimentación; no figura por separado en el censo de 2025.",
+    "puntoAlimentacion": {
+      "numero": 4,
+      "nombre": "Puente Bigar",
+      "ubicacion": "En la bajada al parque Picón, a la izquierda del camino",
+      "fotos": [
+        "img/puntos-alimentacion/pa-04-1.jpg",
+        "img/puntos-alimentacion/pa-04-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "colonia-38",
+    "nombre": "Bodega elaboradora Tierra Aranda",
+    "zona": "Desconocido",
+    "lat": 41.6799904,
+    "lng": -3.6840362,
+    "numGatos": "Desconocido",
+    "programa": "CER-M",
+    "estado": "activa",
+    "fechaAlta": "Desconocido",
+    "contacto": {
+      "protectora": "FeliniSave",
+      "email": "felinisave@gmail.com"
+    },
+    "descripcion": "Colonia deducida de su punto de alimentación; no figura por separado en el censo de 2025.",
+    "puntoAlimentacion": {
+      "numero": 6,
+      "nombre": "Bodega elaboradora Tierra Aranda",
+      "ubicacion": "Junto a la valla de la bodega",
+      "fotos": [
+        "img/puntos-alimentacion/pa-06-1.jpg",
+        "img/puntos-alimentacion/pa-06-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "colonia-39",
+    "nombre": "Avenida General Gutiérrez",
+    "zona": "Desconocido",
+    "lat": 41.6569748,
+    "lng": -3.6927252,
+    "numGatos": "Desconocido",
+    "programa": "CER-M",
+    "estado": "activa",
+    "fechaAlta": "Desconocido",
+    "contacto": {
+      "protectora": "FeliniSave",
+      "email": "felinisave@gmail.com"
+    },
+    "descripcion": "Colonia deducida de su punto de alimentación; no figura por separado en el censo de 2025.",
+    "puntoAlimentacion": {
+      "numero": 7,
+      "nombre": "Avenida General Gutiérrez",
+      "ubicacion": "En los árboles situados a la altura del cruce con la calle Pisuerga",
+      "fotos": [
+        "img/puntos-alimentacion/pa-07-1.jpg",
+        "img/puntos-alimentacion/pa-07-2.jpg"
+      ]
+    }
   }
 ]

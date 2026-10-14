@@ -4,29 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="../">
-  <title>Mapa de colonias felinas — Peluditos</title>
-  <meta name="description" content="Mapa de las colonias felinas y los puntos de alimentación autorizados gestionados por el Ayuntamiento de Aranda de Duero.">
+  <title>Colonias felinas y puntos de alimentación — Peluditos</title>
+  <meta name="description" content="Colonias felinas de Aranda de Duero y sus puntos de alimentación autorizados, con ubicación, fotos y normas.">
   <link rel="canonical" href="https://peluditos.arandadeduero.dev/mapa-colonias/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Peluditos">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="Mapa de colonias felinas — Peluditos">
-  <meta property="og:description" content="Mapa de las colonias felinas y los puntos de alimentación autorizados gestionados por el Ayuntamiento de Aranda de Duero.">
+  <meta property="og:title" content="Colonias felinas y puntos de alimentación — Peluditos">
+  <meta property="og:description" content="Colonias felinas de Aranda de Duero y sus puntos de alimentación autorizados, con ubicación, fotos y normas.">
   <meta property="og:url" content="https://peluditos.arandadeduero.dev/mapa-colonias/">
   <meta property="og:image" content="https://peluditos.arandadeduero.dev/img/og.jpg?v=3">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Un cachorro y un gatito jugando juntos">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mapa de colonias felinas — Peluditos">
-  <meta name="twitter:description" content="Mapa de las colonias felinas y los puntos de alimentación autorizados gestionados por el Ayuntamiento de Aranda de Duero.">
+  <meta name="twitter:title" content="Colonias felinas y puntos de alimentación — Peluditos">
+  <meta name="twitter:description" content="Colonias felinas de Aranda de Duero y sus puntos de alimentación autorizados, con ubicación, fotos y normas.">
   <meta name="twitter:image" content="https://peluditos.arandadeduero.dev/img/og.jpg?v=3">
   <link rel="icon" href="img/logo-web.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
 <body>
   <header class="topbar">
@@ -57,30 +57,33 @@
   </header>
 
   <main class="container">
-    <h1 class="page-title">Mapa de colonias felinas</h1>
-    <p class="page-lead">Colonias felinas gestionadas por el Ayuntamiento de Aranda de Duero, controladas
-       mediante el programa CER-M (captura, esterilización, retorno y monitorización), y puntos de
-       alimentación autorizados donde las personas acreditadas pueden alimentarlas. Los datos son
-       orientativos: para incidencias o información de una colonia concreta, contacta con la protectora
-       responsable.</p>
+    <h1 class="page-title">Colonias felinas y puntos de alimentación</h1>
+    <p class="page-lead">Las colonias felinas de Aranda de Duero se gestionan con el método CER. Solo
+       las <strong>personas acreditadas</strong> pueden alimentarlas, y únicamente en los
+       <strong>puntos de alimentación autorizados</strong>: cajones de madera instalados por el
+       Ayuntamiento junto a cada colonia, con pienso seco y agua limpia. Alimentar en cualquier otro
+       sitio puede ser sancionable.</p>
+    <p class="page-note">¿Gatos enfermos, heridos o una nueva camada? Avisa a la Concejalía de Medio
+       Ambiente o a la Policía Local (947 51 26 46, 24 horas).</p>
 
     <div class="map-legend">
-      <span class="map-legend__item"><span class="map-legend__dot map-legend__dot--colonia">📍</span> Colonias felinas</span>
-      <span class="map-legend__item"><span class="map-legend__dot map-legend__dot--punto">🍽️</span> Puntos de alimentación autorizados</span>
+      <span class="map-legend__item"><span class="map-legend__dot map-legend__dot--punto">1</span> Colonia con punto de alimentación autorizado (nº del cartel)</span>
+      <span class="map-legend__item"><span class="map-legend__dot map-legend__dot--colonia"></span> Otra colonia del censo, sin punto autorizado por ahora</span>
     </div>
 
-    <div id="colonias-map" class="colonias-map" role="application" aria-label="Mapa de colonias felinas y puntos de alimentación"></div>
+    <div id="colonias-map" class="colonias-map" role="application" aria-label="Mapa de colonias felinas y puntos de alimentación autorizados"></div>
     <p id="colonias-empty" class="empty" hidden>Todavía no hay colonias registradas.</p>
 
-    <ul id="colonias-list" class="colonias-list" aria-label="Listado de colonias felinas"></ul>
-
     <h2 class="section-subtitle">Puntos de alimentación autorizados</h2>
-    <p class="page-lead">Cajones de madera fabricados por ASADEMA, instalados por el Ayuntamiento en
-       colaboración con FeliniSave. Solo las personas acreditadas pueden alimentar en estos puntos,
-       exclusivamente con pienso seco y agua limpia; alimentar fuera de ellos puede dar lugar a sanción.
-       <a href="docs/puntos-alimentacion-colonias-felinas.pdf" target="_blank" rel="noopener">Nota de prensa completa (PDF) →</a></p>
-    <p id="puntos-alimentacion-empty" class="empty" hidden>Todavía no hay puntos de alimentación registrados.</p>
-    <ul id="puntos-alimentacion-list" class="colonias-list" aria-label="Listado de puntos de alimentación"></ul>
+    <p class="section-lead">Primera fase: 7 puntos, en colaboración con FeliniSave.
+       <a href="info/">Normas de alimentación responsable</a> ·
+       <a href="docs/puntos-alimentacion-colonias-felinas.pdf" target="_blank" rel="noopener">Nota de prensa (PDF)</a></p>
+    <ul id="puntos-list" class="puntos-list" aria-label="Colonias con punto de alimentación autorizado"></ul>
+
+    <h2 class="section-subtitle">Resto de colonias del censo</h2>
+    <p class="section-lead">Colonias controladas que todavía no tienen punto de alimentación autorizado.
+       Datos orientativos del censo de FeliniSave de mayo de 2025.</p>
+    <ul id="colonias-list" class="colonias-list" aria-label="Colonias sin punto de alimentación autorizado"></ul>
   </main>
 
   <footer class="site-footer">
@@ -109,6 +112,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="nav.js?v=3" defer></script>
   <script src="analytics.js?v=1" defer></script>
-  <script src="colonias-map.js?v=9" defer></script>
+  <script src="colonias-map.js?v=12" defer></script>
 </body>
 </html>
