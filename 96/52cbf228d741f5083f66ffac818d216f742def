@@ -1,0 +1,36 @@
+scripts/bump-data-version.mjs
+  s_c49c567ee1322d::t_919e5d4902f864 4,7,10,21-22,38
+  s_c49c567ee1322d::t_64050ac5b9e8bb 1-3,5-6,8-9,11-20,23-37
+index.html
+  s_c49c567ee1322d::t_919e5d4902f864 105
+archivo/index.html
+  s_c49c567ee1322d::t_919e5d4902f864 92
+.github/workflows/archive-issue.yml
+  s_c49c567ee1322d::t_919e5d4902f864 91
+  s_c49c567ee1322d::t_64050ac5b9e8bb 92
+.github/workflows/animal-issue.yml
+  s_c49c567ee1322d::t_64050ac5b9e8bb 96
+  s_c49c567ee1322d::t_919e5d4902f864 95
+recogidas.js
+  s_c49c567ee1322d::t_919e5d4902f864 10-13
+archivo.js
+  s_c49c567ee1322d::t_919e5d4902f864 16-19
+CLAUDE.md
+  s_c49c567ee1322d::t_2548313b684960 21-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9652cbf228d741f5083f66ffac818d216f742def",
+  "prompts": {},
+  "sessions": {
+    "s_c49c567ee1322d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc90a599-8ca3-45fb-a819-2e685910cc22",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
