@@ -1,4 +1,4 @@
-// Peluditos — listado de fichas archivadas (/archivo/). Cada ficha original queda documentada
+// Bienestar Animal Aranda — listado de fichas archivadas (/archivo/). Cada ficha original queda documentada
 // en su issue de GitHub; aquí solo se enlaza a él, no se repite localmente foto/descripción.
 (function () {
   const listEl = document.getElementById('archivo-list');

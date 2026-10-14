@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Peluditos — valida un issue "Animal recogido" y, si es correcto, genera la ficha:
+// Bienestar Animal Aranda — valida un issue "Animal recogido" y, si es correcto, genera la ficha:
 // descarga la foto a img/recogida-issue-<n>.jpg y añade la entrada a
 // data/animales-recogidos.json. Es exclusivamente para animales recogidos por el servicio
 // municipal de recogida — no para protectoras/asociaciones, que gestionan sus adopciones

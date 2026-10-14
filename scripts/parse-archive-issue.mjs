@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Peluditos — valida un issue "Archivar animal" y, si el id existe en
+// Bienestar Animal Aranda — valida un issue "Archivar animal" y, si el id existe en
 // data/animales-recogidos.json, mueve esa ficha a data/archivo.json (un listado plano:
 // el archivo solo enlaza a los issues de GitHub, no repite localmente foto/descripción).
 // No publica nada por sí mismo: el workflow que lo invoca crea una rama + PR con el

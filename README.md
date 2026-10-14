@@ -1,10 +1,10 @@
-# 🐾 Peluditos
+# 🐾 Bienestar Animal Aranda
 
 Web del **Ayuntamiento de Aranda de Duero** sobre el servicio municipal de recogida de animales
 y el programa de colonias felinas del municipio, con un directorio informativo de las
 protectoras y asociaciones de animales que trabajan en Aranda de forma independiente.
 
-**En vivo:** <https://peluditos.arandadeduero.dev>
+**En vivo:** <https://bienestaranimal.arandadeduero.dev>
 
 Sitio **estático** (HTML/CSS/JS vanilla, sin build ni framework), servido por **GitHub Pages**.
 Los datos se editan a mano en el repo o se generan mediante un flujo de **GitHub Issues → PR →
@@ -145,7 +145,7 @@ python3 -m http.server                              # sirve el sitio en localhos
   transitorio: relanzar *Desplegar en GitHub Pages*.
 - **Añadir/quitar protectora o contactos/logos:** editar `shelters.json` (y opcionalmente subir
   `img/shelters/<username>.jpg`). Nada más.
-- **Verificar en vivo** saltando la caché del CDN: `curl "https://peluditos.arandadeduero.dev/data/animales-recogidos.json?cb=$RANDOM"`.
+- **Verificar en vivo** saltando la caché del CDN: `curl "https://bienestaranimal.arandadeduero.dev/data/animales-recogidos.json?cb=$RANDOM"`.
 - **CSS/JS con caché.** Cloudflare cachea `styles.css` y los `.js` de forma independiente al
   despliegue de GitHub Pages: cualquier cambio en esos ficheros necesita subir su `?v=N` en
   **todas** las páginas que lo cargan, o el cambio no se verá en producción pese a estar
@@ -159,12 +159,12 @@ python3 -m http.server                              # sirve el sitio en localhos
 - **Analítica:** Google Analytics 4 (`G-BXMC22W46S`, el mismo tracker que usa
   [fiestas.arandadeduero.es](https://github.com/arandadeduero/fiestas)) con consentimiento
   explícito: el script no se carga ni envía nada hasta que se pulsa «Aceptar» en el aviso
-  inferior; «Denegar» se recuerda igual (`localStorage`, clave `peluditosAranda:analytics-consent`).
+  inferior; «Denegar» se recuerda igual (`localStorage`, clave `bienestarAnimalAranda:analytics-consent`).
 - **Fuera de alcance (por ahora):** buscador de texto, filtro por zona, pre-render para SEO.
 
 ## Créditos
 
-Este proyecto es una adaptación de **Peluditos**, creado originalmente por vecinos voluntarios
+Este proyecto es una adaptación de uno creado originalmente por vecinos voluntarios
 de la comunidad de [Aldea Pucela](https://aldeapucela.org) para las protectoras de Valladolid.
 Gracias a su equipo por el diseño y la infraestructura original en los que se basa esta versión
 para Aranda de Duero — aunque el propósito del sitio ha evolucionado bastante desde entonces:

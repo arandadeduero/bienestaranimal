@@ -1,4 +1,4 @@
-// Peluditos — utilidades compartidas por parse-animal-issue.mjs y parse-archive-issue.mjs.
+// Bienestar Animal Aranda — utilidades compartidas por parse-animal-issue.mjs y parse-archive-issue.mjs.
 // Sin efectos secundarios: solo funciones puras. Node 20+, sin dependencias.
 
 // Un issue form vuelca el cuerpo como Markdown: "### <etiqueta>" + el texto de la respuesta

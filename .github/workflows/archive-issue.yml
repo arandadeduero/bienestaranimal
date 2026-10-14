@@ -85,7 +85,7 @@ jobs:
           FECHA=$(node -e 'console.log(JSON.parse(process.env.RESULT).fechaRecogida)')
           BRANCH="archive-issue-${ISSUE_NUMBER}"
 
-          git config user.name "peluditos-bot"
+          git config user.name "bienestaranimal-bot"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "$BRANCH"
           node scripts/bump-data-version.mjs recogidas.js archivo.js

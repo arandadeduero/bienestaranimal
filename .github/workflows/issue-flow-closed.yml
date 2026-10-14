@@ -39,14 +39,14 @@ jobs:
         if: ${{ github.event.pull_request.merged == true && steps.issue.outputs.kind == 'publish' }}
         run: |
           gh issue edit "${{ steps.issue.outputs.number }}" --add-label "publicado" --remove-label "pr-abierto" 2>/dev/null || true
-          gh issue comment "${{ steps.issue.outputs.number }}" --body "🎉 ¡Publicado! Ya puedes verlo en https://peluditos.arandadeduero.dev/"
+          gh issue comment "${{ steps.issue.outputs.number }}" --body "🎉 ¡Publicado! Ya puedes verlo en https://bienestaranimal.arandadeduero.dev/"
           gh issue close "${{ steps.issue.outputs.number }}" --reason completed
 
       - name: Archivado (PR fusionado)
         if: ${{ github.event.pull_request.merged == true && steps.issue.outputs.kind == 'archive' }}
         run: |
           gh issue edit "${{ steps.issue.outputs.number }}" --add-label "archivado" --remove-label "pr-abierto" 2>/dev/null || true
-          gh issue comment "${{ steps.issue.outputs.number }}" --body "🗄️ Ficha archivada. Ya no aparece en la portada; puedes encontrarla en https://peluditos.arandadeduero.dev/archivo/"
+          gh issue comment "${{ steps.issue.outputs.number }}" --body "🗄️ Ficha archivada. Ya no aparece en la portada; puedes encontrarla en https://bienestaranimal.arandadeduero.dev/archivo/"
           gh issue close "${{ steps.issue.outputs.number }}" --reason completed
 
       - name: Rechazado (PR cerrado sin fusionar)

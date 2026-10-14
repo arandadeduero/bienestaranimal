@@ -2,7 +2,7 @@
 // descarga ni envía nada hasta que la persona pulsa «Aceptar» en el aviso.
 (function () {
   var MEASUREMENT_ID = 'G-BXMC22W46S';
-  var CONSENT_KEY = 'peluditosAranda:analytics-consent';
+  var CONSENT_KEY = 'bienestarAnimalAranda:analytics-consent';
   var GRANTED = 'granted';
   var DENIED = 'denied';
   var gaLoaded = false;

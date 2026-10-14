@@ -1,4 +1,4 @@
-// Peluditos — mapa de colonias felinas y puntos de alimentación autorizados
+// Bienestar Animal Aranda — mapa de colonias felinas y puntos de alimentación autorizados
 // (Leaflet + teselas de OpenStreetMap).
 //
 // Un único modelo: la colonia. Si una colonia tiene `puntoAlimentacion`, ese punto es lo

@@ -89,7 +89,7 @@ jobs:
           CLEAN_TITLE=$(node -e 'console.log((process.env.ISSUE_TITLE || "").replace(/^\[Animal\]\s*/, "").trim())')
           BRANCH="animal-issue-${ISSUE_NUMBER}"
 
-          git config user.name "peluditos-bot"
+          git config user.name "bienestaranimal-bot"
           git config user.email "actions@users.noreply.github.com"
           git checkout -b "$BRANCH"
           node scripts/bump-data-version.mjs recogidas.js

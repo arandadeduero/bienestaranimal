@@ -1,4 +1,4 @@
-# peluditos
+# bienestaranimal
 
 Sitio estático (HTML/CSS/JS sin build) desplegado con GitHub Pages detrás de Cloudflare.
 
@@ -25,7 +25,7 @@ misma PR). Si se añade un JSON nuevo que toque un workflow, hay que llamar a es
 ## Contexto del proyecto
 
 - Web del Ayuntamiento de Aranda de Duero. Rama por defecto `aranda`; cada push despliega
-  (`deploy-pages.yml`) en https://peluditos.arandadeduero.dev. No hay build ni secrets.
+  (`deploy-pages.yml`) en https://bienestaranimal.arandadeduero.dev. No hay build ni secrets.
 - Idioma: español en todo el contenido, commits y mensajes al usuario.
 - Páginas: portada (servicio municipal de recogida: Policía Local 947 51 26 46, 24 h, sin dirección
   física), `/info`, `/protectoras`, `/mapa-colonias`, `/archivo`.
