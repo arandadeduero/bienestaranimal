@@ -284,8 +284,8 @@
     "id": "colonia-16",
     "nombre": "Cementerio Viejo",
     "zona": "Desconocido",
-    "lat": 41.6815483,
-    "lng": -3.703963,
+    "lat": 41.6740745,
+    "lng": -3.6918032,
     "numGatos": "Desconocido",
     "programa": "CER-M",
     "estado": "activa",
@@ -298,7 +298,7 @@
     "puntoAlimentacion": {
       "numero": 1,
       "nombre": "Cementerio Viejo",
-      "ubicacion": "En las traseras del antiguo invernadero municipal",
+      "ubicacion": "Detrás del invernadero municipal, en la calle Eras de San Gil (cementerio viejo)",
       "fotos": [
         "img/puntos-alimentacion/pa-01-1.jpg",
         "img/puntos-alimentacion/pa-01-2.jpg"
@@ -403,10 +403,10 @@
   },
   {
     "id": "colonia-23",
-    "nombre": "Calle Padre Claret",
+    "nombre": "Final de la calle Miranda de Duero",
     "zona": "Desconocido",
-    "lat": 41.6682893,
-    "lng": -3.6865039,
+    "lat": 41.669967,
+    "lng": -3.686249,
     "numGatos": "Desconocido",
     "programa": "CER-M",
     "estado": "activa",
@@ -418,8 +418,8 @@
     "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
     "puntoAlimentacion": {
       "numero": 3,
-      "nombre": "Plaza Claret",
-      "ubicacion": "En los jardines situados frente a la academia Artedan",
+      "nombre": "Calle Miranda de Duero",
+      "ubicacion": "Al final de la calle Miranda de Duero",
       "fotos": [
         "img/puntos-alimentacion/pa-03-1.jpg",
         "img/puntos-alimentacion/pa-03-2.jpg"
