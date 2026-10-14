@@ -1,0 +1,51 @@
+[
+  {
+    "id": "pa-01",
+    "nombre": "Cementerio Viejo",
+    "ubicacion": "En las traseras del antiguo invernadero municipal",
+    "lat": 41.6815483,
+    "lng": -3.703963
+  },
+  {
+    "id": "pa-02",
+    "nombre": "Parking Sol de las Moreras",
+    "ubicacion": "Junto al muro lateral del aparcamiento, a la derecha de la puerta de entrada",
+    "lat": 41.6693848,
+    "lng": -3.682893
+  },
+  {
+    "id": "pa-03",
+    "nombre": "Plaza Claret",
+    "ubicacion": "En los jardines situados frente a la academia Artedan",
+    "lat": 41.6682893,
+    "lng": -3.6865039
+  },
+  {
+    "id": "pa-04",
+    "nombre": "Puente Bigar",
+    "ubicacion": "En la bajada al parque Picón, a la izquierda del camino",
+    "lat": 41.6687579,
+    "lng": -3.6871766
+  },
+  {
+    "id": "pa-05",
+    "nombre": "Parque de la Huerta",
+    "ubicacion": "En el muro situado a la izquierda del camino de entrada de vehículos",
+    "lat": 41.6683627,
+    "lng": -3.6792756
+  },
+  {
+    "id": "pa-06",
+    "nombre": "Bodega elaboradora Tierra Aranda",
+    "ubicacion": "Junto a la valla de la bodega",
+    "lat": 41.6799904,
+    "lng": -3.6840362
+  },
+  {
+    "id": "pa-07",
+    "nombre": "Avenida General Gutiérrez",
+    "ubicacion": "En los árboles situados a la altura del cruce con la calle Pisuerga",
+    "lat": 41.6569748,
+    "lng": -3.6927252
+  }
+]
