@@ -3,31 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bienestar Animal Aranda — Servicio municipal de recogida de animales de Aranda de Duero</title>
-  <meta name="description" content="Animales bajo custodia del servicio municipal de recogida de Aranda de Duero. Una web del Ayuntamiento de Aranda de Duero.">
+  <meta name="theme-color" content="#0083c1">
+  <title>Recogida de animales en Aranda de Duero — Bienestar Animal Aranda</title>
+  <meta name="description" content="Animal perdido o abandonado en Aranda de Duero: llama a la Policía Local (947 51 26 46, 24 h). Animales bajo custodia municipal y colonias felinas.">
   <link rel="canonical" href="https://bienestaranimal.arandadeduero.dev/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bienestar Animal Aranda">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="Bienestar Animal Aranda — Servicio municipal de recogida de animales de Aranda de Duero">
-  <meta property="og:description" content="Animales bajo custodia del servicio municipal de recogida de Aranda de Duero. Una web del Ayuntamiento de Aranda de Duero.">
+  <meta property="og:title" content="Recogida de animales en Aranda de Duero — Bienestar Animal Aranda">
+  <meta property="og:description" content="Animal perdido o abandonado en Aranda de Duero: llama a la Policía Local (947 51 26 46, 24 h). Animales bajo custodia municipal y colonias felinas.">
   <meta property="og:url" content="https://bienestaranimal.arandadeduero.dev/">
   <meta property="og:image" content="https://bienestaranimal.arandadeduero.dev/img/og.jpg?v=4">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Un cachorro y un gatito jugando juntos">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Bienestar Animal Aranda, del Ayuntamiento de Aranda de Duero: recogida de animales, colonias felinas y puntos de alimentación autorizados. Un cachorro y un gatito jugando.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bienestar Animal Aranda — Servicio municipal de recogida de Aranda de Duero">
-  <meta name="twitter:description" content="Animales bajo custodia del servicio municipal de recogida de Aranda de Duero.">
+  <meta name="twitter:title" content="Recogida de animales en Aranda de Duero — Bienestar Animal Aranda">
+  <meta name="twitter:description" content="Animal perdido o abandonado en Aranda de Duero: llama a la Policía Local (947 51 26 46, 24 h). Animales bajo custodia municipal y colonias felinas.">
   <meta name="twitter:image" content="https://bienestaranimal.arandadeduero.dev/img/og.jpg?v=4">
+  <meta name="twitter:image:alt" content="Bienestar Animal Aranda, del Ayuntamiento de Aranda de Duero: recogida de animales, colonias felinas y puntos de alimentación autorizados. Un cachorro y un gatito jugando.">
   <link rel="icon" href="img/logo-web.jpg">
-  <link rel="stylesheet" href="styles.css?v=21">
+  <link rel="stylesheet" href="styles.css?v=22">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "GovernmentOrganization",
+        "@id": "https://www.arandadeduero.es/#organization",
+        "name": "Ayuntamiento de Aranda de Duero",
+        "url": "https://www.arandadeduero.es/",
+        "sameAs": [
+          "https://www.instagram.com/ayuntamientoarandadeduero",
+          "https://www.facebook.com/aytoarandadeduero"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bienestaranimal.arandadeduero.dev/#website",
+        "url": "https://bienestaranimal.arandadeduero.dev/",
+        "name": "Bienestar Animal Aranda",
+        "description": "Servicio municipal de recogida de animales, colonias felinas y puntos de alimentación autorizados de Aranda de Duero.",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://www.arandadeduero.es/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="./">
-        <img class="brand__logo" src="img/logo-web.jpg" alt="Bienestar Animal Aranda">
+        <img class="brand__logo" src="img/logo-web.jpg" alt="Bienestar Animal Aranda" width="48" height="48">
         <span class="brand__text">
           <span class="brand__kicker">Ayuntamiento de Aranda de Duero</span>
           <span class="brand__title">Bienestar Animal Aranda</span>
@@ -53,7 +82,7 @@
 
   <div class="container">
     <section class="municipal-service">
-      <h2 class="municipal-service__title">🐾 Servicio municipal de recogida de animales</h2>
+      <h1 class="municipal-service__title">🐾 Servicio municipal de recogida de animales de Aranda de Duero</h1>
       <p>El Ayuntamiento de Aranda de Duero tiene contratado un servicio de recogida de animales
          abandonados o perdidos en la vía pública. Aquí se publican, a modo de aviso, los animales
          que están bajo custodia de este servicio municipal.</p>
@@ -75,12 +104,14 @@
       <div id="recogidas" class="recogidas"></div>
       <p id="recogidas-empty" class="municipal-service__pending" hidden>Todavía no hay fichas de animales recogidos publicadas.</p>
     </section>
+    <p>Más en esta web: el <a href="mapa-colonias/">mapa de colonias felinas y puntos de alimentación autorizados</a>
+       y la <a href="info/">información del programa de colonias felinas (método CER y normas)</a> de Aranda de Duero.</p>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p>Animales de las asociaciones y protectoras de Aranda de Duero, todos en un mismo sitio.
-         Una web del Ayuntamiento de Aranda de Duero.</p>
+      <p>Servicio municipal de recogida de animales, colonias felinas y puntos de alimentación autorizados
+         de Aranda de Duero. Una web del Ayuntamiento de Aranda de Duero.</p>
       <p class="fineprint">Cada protectora gestiona sus adopciones de forma independiente y con sus propias normas:
          puedes contactar con ellas directamente desde la página de Protectoras y Asociaciones.</p>
       <p class="fineprint">Licencia contenido <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>
