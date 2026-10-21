@@ -11,12 +11,21 @@ un `.js`, un `.json` o un `.css`, hay que subir su versión en el mismo commit:*
 - **CSS y JS** (`styles.css`, `nav.js`, `analytics.js`, `colonias-map.js`, `recogidas.js`,
   `archivo.js`…): subir el `?v=N` en **todas** las páginas HTML que lo cargan (`index.html` y
   `*/index.html`). Buscar con `grep -rn "<fichero>?v=" .` para no dejarse ninguna.
+- **Fuentes** (`fonts/*.woff2`): subir el `?v=` tanto en el `url()` del `@font-face` de `styles.css` como en
+  el `<link rel="preload">` de cada HTML (deben coincidir exactamente o el preload no sirve).
 - **JSON de datos** (`data/*.json`): subir la versión con la que el script que lo lee lo pide
   (p. ej. `DATA_VERSION` en `colonias-map.js`, que hace `fetch('data/colonias.json?v=N')`), y
   después subir también el `?v=` del propio script en el HTML para que se descargue el cambio.
   Si un script lee un JSON sin versión, añadírsela.
 
 Antes de commitear, comprobar que no queda ninguna referencia con la versión vieja.
+
+## Estilos
+
+Todos los estilos van en `styles.css`: nada de `style="…"` en el HTML ni de `element.style.x = …` en
+JS. Si el JS necesita variar un estilo, que añada o quite una clase; si necesita pasar un valor
+calculado (p. ej. coordenadas), que lo haga con una variable CSS (`style.setProperty('--x', …)`)
+que consuma una regla del CSS, como hace `nav.js` con `.nav-dropdown__menu--fixed`.
 
 Los JSON que modifican los workflows de issues (`animales-recogidos.json`, `archivo.json`) los versiona
 el propio workflow con `scripts/bump-data-version.mjs` (sube `DATA_VERSION` y el `?v=` del HTML en la

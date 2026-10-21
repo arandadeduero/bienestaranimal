@@ -18,15 +18,21 @@
   // .mainnav usa overflow-x: auto (scroll horizontal en escritorio si no caben los enlaces),
   // lo que también recorta el eje Y (regla CSS: overflow-x distinto de visible fuerza
   // overflow-y a auto) — así que el menú absoluto quedaba cortado. En escritorio lo posicionamos
-  // con position:fixed (referido al viewport, no al contenedor con overflow) calculado desde el
-  // botón; en móvil (menú apilado) dejamos el position:static que ya pone el CSS.
+  // con la clase .nav-dropdown__menu--fixed (position:fixed, referido al viewport, no al
+  // contenedor con overflow); el JS solo calcula las coordenadas desde el botón y las pasa como
+  // variables CSS. En móvil (menú apilado) se quita la clase y manda el CSS.
   const isMobileNav = () => window.matchMedia('(max-width: 767px)').matches;
   const positionMenu = () => {
-    if (isMobileNav()) { menu.style.position = ''; menu.style.top = ''; menu.style.right = ''; return; }
+    if (isMobileNav()) {
+      menu.classList.remove('nav-dropdown__menu--fixed');
+      menu.style.removeProperty('--nav-menu-top');
+      menu.style.removeProperty('--nav-menu-right');
+      return;
+    }
     const rect = toggle.getBoundingClientRect();
-    menu.style.position = 'fixed';
-    menu.style.top = `${rect.bottom + 4}px`;
-    menu.style.right = `${window.innerWidth - rect.right}px`;
+    menu.style.setProperty('--nav-menu-top', `${rect.bottom + 4}px`);
+    menu.style.setProperty('--nav-menu-right', `${window.innerWidth - rect.right}px`);
+    menu.classList.add('nav-dropdown__menu--fixed');
   };
 
   const close = () => {
