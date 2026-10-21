@@ -22,6 +22,13 @@ Los JSON que modifican los workflows de issues (`animales-recogidos.json`, `arch
 el propio workflow con `scripts/bump-data-version.mjs` (sube `DATA_VERSION` y el `?v=` del HTML en la
 misma PR). Si se añade un JSON nuevo que toque un workflow, hay que llamar a ese script también.
 
+## Sitemap
+
+`sitemap.xml` no está en el repo: lo genera `scripts/build-sitemap.mjs` en cada despliegue a partir
+de los `index.html` existentes (raíz y carpetas de primer nivel), usando su `<link rel="canonical">`.
+Al añadir o quitar una página no hay que tocar nada más, pero toda página nueva debe llevar canonical;
+las que no deban indexarse (p. ej. `404.html`) llevan `<meta name="robots" content="noindex">`.
+
 ## Contexto del proyecto
 
 - Web del Ayuntamiento de Aranda de Duero. Rama por defecto `aranda`; cada push despliega

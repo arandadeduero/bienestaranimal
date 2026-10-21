@@ -24,6 +24,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: actions/configure-pages@v6
+      - name: Generar sitemap.xml a partir de las páginas existentes
+        run: node scripts/build-sitemap.mjs
       - uses: actions/upload-pages-artifact@v5
         with:
           path: .

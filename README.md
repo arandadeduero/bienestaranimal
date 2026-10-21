@@ -106,6 +106,7 @@ archivado) antes de darlos por buenos.
 | `archivo.js` | Listado enlazado a issues de GitHub en `/archivo/`. |
 | `scripts/lib.mjs` | `parseIssueBody`: parser línea a línea del cuerpo de un issue form. |
 | `scripts/parse-animal-issue.mjs` | Valida un issue "Animal recogido" y genera su ficha (ver arriba). |
+| `scripts/build-sitemap.mjs` | Genera `sitemap.xml` (no versionado) a partir de las páginas existentes; lo ejecuta `deploy-pages.yml`. |
 | `scripts/parse-archive-issue.mjs` | Valida un issue "Archivar animal" y mueve la ficha al archivo. |
 | `shelters.json` | Lista de protectoras: `username`, `name`, `zone`, `instagramUrl` + contacto, solo para el directorio en `/protectoras/`. |
 | `data/colonias.json` | Colonias felinas y, dentro de ellas, sus puntos de alimentación autorizados; lo pinta `/mapa-colonias/` (edición manual). |
