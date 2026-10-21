@@ -1,0 +1,36 @@
+info/index.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 28-29,182
+404.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 10-11,56
+nav.js
+  s_6557ec3ddf2a33::t_76e93ab74fe479 21-23,26-31,33-35
+archivo/index.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 28-29,104
+CLAUDE.md
+  s_6557ec3ddf2a33::t_76e93ab74fe479 14-15,23-28
+  s_6557ec3ddf2a33::t_45cfe4d7f81909 29
+index.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 27-28,135
+protectoras/index.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 28-29,102
+mapa-colonias/index.html
+  s_6557ec3ddf2a33::t_76e93ab74fe479 28,32,126
+styles.css
+  s_6557ec3ddf2a33::t_76e93ab74fe479 7,15,161-167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ec19e3fc6b39548242ecf1c17bc34db0dc4ec5ac",
+  "prompts": {},
+  "sessions": {
+    "s_6557ec3ddf2a33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "526b9113-b052-44b1-bc18-bad52002ba77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
