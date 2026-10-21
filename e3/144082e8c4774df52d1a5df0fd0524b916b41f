@@ -1,0 +1,33 @@
+info/index.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 28-29
+archivo/index.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 28-29
+fonts/OFL.txt
+  s_6557ec3ddf2a33::t_337943b4eb91f6 1-93
+mapa-colonias/index.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 28,32
+404.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 10-11
+protectoras/index.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 28-29
+styles.css
+  s_6557ec3ddf2a33::t_337943b4eb91f6 1-18
+index.html
+  s_6557ec3ddf2a33::t_337943b4eb91f6 27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e3144082e8c4774df52d1a5df0fd0524b916b41f",
+  "prompts": {},
+  "sessions": {
+    "s_6557ec3ddf2a33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "526b9113-b052-44b1-bc18-bad52002ba77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
