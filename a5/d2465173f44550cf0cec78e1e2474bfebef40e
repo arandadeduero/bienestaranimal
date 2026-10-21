@@ -1,0 +1,38 @@
+.github/workflows/leaflet-update.yml
+  s_6557ec3ddf2a33::t_8b79117f417fdf 1-77
+scripts/vendor-leaflet.mjs
+  s_6557ec3ddf2a33::t_9dba616fa6c49f 36
+  s_6557ec3ddf2a33::t_0b5150c6322544 1-35,37-55
+mapa-colonias/index.html
+  s_6557ec3ddf2a33::t_9dba616fa6c49f 30,124
+scripts/build-sitemap.mjs
+  s_6557ec3ddf2a33::t_0b5150c6322544 12
+CLAUDE.md
+  s_6557ec3ddf2a33::t_8b79117f417fdf 34-40
+README.md
+  s_6557ec3ddf2a33::t_8b79117f417fdf 33,109,114
+vendor/leaflet/LICENSE
+  s_6557ec3ddf2a33::t_8df5a35617211b 1-26
+vendor/leaflet/VERSION
+  s_6557ec3ddf2a33::t_e2ac93d5e43938 1
+vendor/leaflet/leaflet.css
+  s_6557ec3ddf2a33::t_d3ebb9a701aeac 1-661
+vendor/leaflet/leaflet.js
+  s_6557ec3ddf2a33::t_b549271582db74 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a5d2465173f44550cf0cec78e1e2474bfebef40e",
+  "prompts": {},
+  "sessions": {
+    "s_6557ec3ddf2a33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "526b9113-b052-44b1-bc18-bad52002ba77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
