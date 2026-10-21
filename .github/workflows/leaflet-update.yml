@@ -1,0 +1,77 @@
+name: Comprobar si hay una versión nueva de Leaflet
+
+# Leaflet está alojado en vendor/leaflet/ (sin CDN). Cada lunes se compara la versión alojada
+# (vendor/leaflet/VERSION) con la última publicada en npm; si hay una nueva, se descarga con
+# scripts/vendor-leaflet.mjs y se abre un PR para revisarlo y fusionarlo a mano. Si ya hay un
+# PR abierto para esa versión, no se abre otro.
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # lunes, 08:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: leaflet-update
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Comparar la versión alojada con la última de npm
+        id: versions
+        run: |
+          actual=$(tr -d '[:space:]' < vendor/leaflet/VERSION)
+          ultima=$(npm view leaflet version)
+          echo "actual=$actual" >> "$GITHUB_OUTPUT"
+          echo "ultima=$ultima" >> "$GITHUB_OUTPUT"
+          if [ "$actual" = "$ultima" ]; then
+            echo "Leaflet $actual ya es la última versión."
+          else
+            echo "Hay una versión nueva de Leaflet: $actual → $ultima"
+          fi
+
+      - name: Comprobar si ya hay un PR abierto para esa versión
+        id: existing_pr
+        if: steps.versions.outputs.actual != steps.versions.outputs.ultima
+        run: |
+          url=$(gh pr list --head "leaflet-${{ steps.versions.outputs.ultima }}" --state open --json url --jq '.[0].url // empty')
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          [ -n "$url" ] && echo "Ya existe $url; no se abre otro."
+
+      - name: Descargar la versión nueva y abrir un Pull Request
+        if: steps.versions.outputs.actual != steps.versions.outputs.ultima && steps.existing_pr.outputs.url == ''
+        env:
+          ACTUAL: ${{ steps.versions.outputs.actual }}
+          ULTIMA: ${{ steps.versions.outputs.ultima }}
+        run: |
+          BRANCH="leaflet-${ULTIMA}"
+          git config user.name "bienestaranimal-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          node scripts/vendor-leaflet.mjs "$ULTIMA"
+          git add vendor/leaflet mapa-colonias/index.html
+          git commit -m "Actualizar Leaflet de ${ACTUAL} a ${ULTIMA}"
+          git push -u origin "$BRANCH" --force
+
+          {
+            echo "Hay una versión nueva de Leaflet: **${ACTUAL} → ${ULTIMA}**."
+            echo ""
+            echo "Este PR la descarga del registro de npm (tarball verificado contra su integridad publicada) a \`vendor/leaflet/\`"
+            echo "y sube el \`?v=\` con el que \`mapa-colonias/index.html\` la carga."
+            echo ""
+            echo "Antes de fusionar: leer las notas de la versión, <https://github.com/Leaflet/Leaflet/releases/tag/v${ULTIMA}>,"
+            echo "y comprobar el mapa de colonias (marcadores, popups con fotos y leyenda)."
+          } > /tmp/pr-body.md
+          gh pr create --base aranda --head "$BRANCH" --title "Actualizar Leaflet a ${ULTIMA}" --body-file /tmp/pr-body.md

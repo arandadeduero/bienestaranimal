@@ -31,6 +31,13 @@ Los JSON que modifican los workflows de issues (`animales-recogidos.json`, `arch
 el propio workflow con `scripts/bump-data-version.mjs` (sube `DATA_VERSION` y el `?v=` del HTML en la
 misma PR). Si se añade un JSON nuevo que toque un workflow, hay que llamar a ese script también.
 
+## Leaflet
+
+Leaflet está alojado en `vendor/leaflet/` (sin CDN): lo descarga `scripts/vendor-leaflet.mjs <versión>`
+desde npm, verificando el tarball, y versiona su carga en `mapa-colonias/index.html` con el número de
+versión de Leaflet (`?v=1.9.4`). El workflow `leaflet-update.yml` comprueba cada lunes si hay versión
+nueva y abre un PR con la actualización; el merge es manual. No editar `vendor/` a mano.
+
 ## Sitemap
 
 `sitemap.xml` no está en el repo: lo genera `scripts/build-sitemap.mjs` en cada despliegue a partir

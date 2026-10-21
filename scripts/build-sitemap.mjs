@@ -9,7 +9,7 @@ import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = process.argv[2] ?? process.cwd();
-const IGNORAR = new Set(['node_modules', 'scripts', 'docs', 'img', 'data', 'fonts', 'scratch']);
+const IGNORAR = new Set(['node_modules', 'scripts', 'docs', 'img', 'data', 'fonts', 'vendor', 'scratch']);
 
 function paginas() {
   const res = [join(root, 'index.html')];

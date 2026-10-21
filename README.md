@@ -30,7 +30,7 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
 - **Protectoras** (`/protectoras/`): directorio informativo de cada entidad con logo y contacto
   público. Son protectoras y asociaciones independientes, sin relación con el Ayuntamiento — la
   página lo indica explícitamente.
-- **Colonias y puntos de alimentación** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/)
+- **Colonias y puntos de alimentación** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/), alojado en `vendor/leaflet/`,
   + teselas de OpenStreetMap, sin API key) con **un único modelo: la colonia**. Si una colonia tiene
   un punto de alimentación autorizado (los cajones de madera de ASADEMA que el Ayuntamiento instala
   con FeliniSave; 7 en la primera fase de octubre de 2026), ese punto es lo principal: marcador
@@ -106,10 +106,12 @@ archivado) antes de darlos por buenos.
 | `archivo.js` | Listado enlazado a issues de GitHub en `/archivo/`. |
 | `scripts/lib.mjs` | `parseIssueBody`: parser línea a línea del cuerpo de un issue form. |
 | `scripts/parse-animal-issue.mjs` | Valida un issue "Animal recogido" y genera su ficha (ver arriba). |
+| `scripts/vendor-leaflet.mjs` | Descarga una versión de Leaflet de npm a `vendor/leaflet/` y versiona su carga en el mapa; lo usa `leaflet-update.yml`. |
 | `scripts/build-sitemap.mjs` | Genera `sitemap.xml` (no versionado) a partir de las páginas existentes; lo ejecuta `deploy-pages.yml`. |
 | `scripts/parse-archive-issue.mjs` | Valida un issue "Archivar animal" y mueve la ficha al archivo. |
 | `shelters.json` | Lista de protectoras: `username`, `name`, `zone`, `instagramUrl` + contacto, solo para el directorio en `/protectoras/`. |
 | `data/colonias.json` | Colonias felinas y, dentro de ellas, sus puntos de alimentación autorizados; lo pinta `/mapa-colonias/` (edición manual). |
+| `vendor/leaflet/` | Leaflet alojado en el propio sitio (JS, CSS, imágenes, licencia BSD-2 y `VERSION`); no se carga de ningún CDN. |
 | `fonts/` | Tipografía Outfit variable (300–800, subconjuntos latin y latin-ext, `.woff2`, licencia OFL) alojada en el propio sitio: no se hacen peticiones a Google Fonts (RGPD). |
 | `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo; se enlazan desde `puntoAlimentacion.fotos` en `data/colonias.json`. |
 | `data/animales-recogidos.json` | Fichas del servicio municipal de recogida que pinta la portada (`/`) (edición manual o por issue). |
