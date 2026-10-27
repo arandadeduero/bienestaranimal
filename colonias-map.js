@@ -31,12 +31,12 @@
   const GENERICA = 'Colonia felina urbana incluida en el censo municipal de 2025.';
   const notaPropia = (c) => (c.descripcion && c.descripcion !== GENERICA ? c.descripcion : '');
 
-  // Miniaturas de las fotos del punto; cada una abre la foto completa en otra pestaña.
+  // Miniaturas de las fotos del punto; cada una abre la foto ampliada en un visor emergente (ver más abajo).
   const fotosHtml = (p, cls) => {
     const fotos = Array.isArray(p.fotos) ? p.fotos : [];
     if (!fotos.length) return '';
     return `<div class="${cls}">` + fotos.map((src, i) =>
-      `<a href="${escapeHtml(src)}" target="_blank" rel="noopener">` +
+      `<a href="${escapeHtml(src)}">` +
       `<img src="${escapeHtml(src)}" alt="Punto nº ${escapeHtml(p.numero)}, ${escapeHtml(p.nombre)}: foto ${i + 1}" width="120" height="160"></a>`
     ).join('') + '</div>';
   };
@@ -85,6 +85,28 @@
     }
     container.appendChild(li);
   }
+
+  // Ampliar las fotos en una ventana emergente (<dialog>) en vez de abrirlas en otra pestaña.
+  // El listener va en fase de captura porque Leaflet corta la propagación de los clics dentro
+  // de los popups del mapa.
+  const visor = document.createElement('dialog');
+  visor.className = 'foto-visor';
+  visor.setAttribute('aria-label', 'Foto ampliada');
+  visor.innerHTML = '<button class="foto-visor__close" type="button" aria-label="Cerrar">✕</button><img alt="">';
+  document.body.appendChild(visor);
+  const visorImg = visor.querySelector('img');
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('.pa-photos a, .punto-card__photos a');
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    visorImg.src = a.getAttribute('href');
+    visorImg.alt = a.querySelector('img')?.alt || '';
+    visor.showModal();
+  }, true);
+  // Clic fuera de la foto (fondo) o en la ✕ cierra el visor; Esc lo cierra de serie.
+  visor.addEventListener('click', (e) => { if (e.target !== visorImg) visor.close(); });
+  visor.addEventListener('close', () => { visorImg.removeAttribute('src'); });
 
   // Subir DATA_VERSION cada vez que cambie data/colonias.json: Cloudflare/GitHub Pages lo cachean
   // y, sin versión en la URL, los visitantes seguirían viendo los datos antiguos tras el despliegue.

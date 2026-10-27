@@ -657,3 +657,32 @@ main.container { padding-bottom: 3rem; }
 .analytics-consent-deny:focus-visible { background: var(--brand-50); }
 .analytics-consent-accept:hover,
 .analytics-consent-accept:focus-visible { background: var(--brand-600); }
+
+/* ===== Visor emergente de fotos de los puntos de alimentación ===== */
+.foto-visor {
+  max-width: min(94vw, 900px);
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  border-radius: .75rem;
+  background: #000;
+  overflow: hidden;
+}
+.foto-visor::backdrop { background: rgba(0, 0, 0, .75); }
+.foto-visor img { display: block; max-width: 100%; max-height: 94vh; margin: 0 auto; object-fit: contain; }
+.foto-visor__close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .9);
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.foto-visor__close:hover,
+.foto-visor__close:focus-visible { background: #fff; }
