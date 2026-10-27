@@ -88,7 +88,7 @@
 
   // Subir DATA_VERSION cada vez que cambie data/colonias.json: Cloudflare/GitHub Pages lo cachean
   // y, sin versión en la URL, los visitantes seguirían viendo los datos antiguos tras el despliegue.
-  const DATA_VERSION = 2;
+  const DATA_VERSION = 3;
   fetch(`data/colonias.json?v=${DATA_VERSION}`)
     .then((r) => (r.ok ? r.json() : []))
     .then((data) => {

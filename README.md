@@ -33,17 +33,17 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
 - **Colonias y puntos de alimentación** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/), alojado en `vendor/leaflet/`,
   + teselas de OpenStreetMap, sin API key) con **un único modelo: la colonia**. Si una colonia tiene
   un punto de alimentación autorizado (los cajones de madera de ASADEMA que el Ayuntamiento instala
-  con FeliniSave; 7 en la primera fase de octubre de 2026), ese punto es lo principal: marcador
+  con FeliniSave; 7 en la primera fase de octubre de 2026 y 13 en total a fecha de 27/10/2026), ese punto es lo principal: marcador
   naranja numerado con el nº del cartel, ficha con sus fotos y listado propio arriba. El resto de
   colonias del censo salen como punto azul discreto y en un listado de segundo nivel. Si un punto
   autorizado no coincide con ninguna colonia del censo se **da por hecho que hay una colonia ahí**
   (colonia "deducida"). Datos en [`data/colonias.json`](data/colonias.json), un array de
   `{id, nombre, zona, lat, lng, numGatos, programa, estado, fechaAlta, descripcion, contacto,
-  puntoAlimentacion?}`, donde `puntoAlimentacion` es `{numero, nombre, ubicacion, fotos[]}`. 41
+  puntoAlimentacion?}`, donde `puntoAlimentacion` es `{numero, nombre, ubicacion, fotos[]}`. 43
   colonias: 38 del censo de FeliniSave (mayo 2025, geolocalizadas con
-  [Nominatim](https://nominatim.org/)) + 3 deducidas de su punto (nº 4, 6 y 7). Los campos sin dato
+  [Nominatim](https://nominatim.org/)) + 5 deducidas de su punto (nº 4, 6, 7, 9 y 11). Los campos sin dato
   llevan `"Desconocido"` (se muestra «Número de gatos no conocido»). Las fotos son
-  `img/puntos-alimentacion/<id>-<n>.jpg`. Los puntos 1, 2, 3 y 5 se asociaron a su colonia del
+  `img/puntos-alimentacion/<id>-<n>.jpg`. Los puntos 1, 2, 3, 5, 8, 10, 12 y 13 se asociaron a su colonia del
   censo por nombre y coordenadas; si alguna asociación no es correcta basta con editar
   `data/colonias.json`.
 - **Info** (`/info/`): 4 tarjetas de estadísticas reales del programa de colonias felinas (censo

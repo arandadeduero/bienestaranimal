@@ -157,7 +157,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 10,
+      "nombre": "Pinar Virgen Viñas",
+      "ubicacion": "Junto a la valla del centro de ASADEMA",
+      "fotos": [
+        "img/puntos-alimentacion/pa-10-1.jpg",
+        "img/puntos-alimentacion/pa-10-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-09",
@@ -214,7 +223,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 8,
+      "nombre": "Ctra. Sinovas I",
+      "ubicacion": "En la pared de Motor-Auto",
+      "fotos": [
+        "img/puntos-alimentacion/pa-08-1.jpg",
+        "img/puntos-alimentacion/pa-08-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-12",
@@ -367,7 +385,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025."
+    "descripcion": "Colonia felina urbana incluida en el censo municipal de 2025.",
+    "puntoAlimentacion": {
+      "numero": 13,
+      "nombre": "Ribera del Duero I",
+      "ubicacion": "En la senda del río, a la altura de las dependencias de Correos",
+      "fotos": [
+        "img/puntos-alimentacion/pa-13-1.jpg",
+        "img/puntos-alimentacion/pa-13-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-21",
@@ -577,7 +604,16 @@
       "protectora": "FeliniSave",
       "email": "felinisave@gmail.com"
     },
-    "descripcion": "Entre fincas de la residencia y Alcampo. Ubicación aproximada."
+    "descripcion": "Entre fincas de la residencia y Alcampo. Ubicación aproximada.",
+    "puntoAlimentacion": {
+      "numero": 12,
+      "nombre": "Paseo Virgen Viñas",
+      "ubicacion": "Junto a la tapia de la finca, al comienzo del camino viniendo del centro de Aranda",
+      "fotos": [
+        "img/puntos-alimentacion/pa-12-1.jpg",
+        "img/puntos-alimentacion/pa-12-2.jpg"
+      ]
+    }
   },
   {
     "id": "colonia-33",
@@ -715,6 +751,56 @@
       "fotos": [
         "img/puntos-alimentacion/pa-07-1.jpg",
         "img/puntos-alimentacion/pa-07-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "colonia-40",
+    "nombre": "Campo de Rugby",
+    "zona": "Virgen de las Viñas",
+    "lat": 41.6817824,
+    "lng": -3.6855201,
+    "numGatos": "Desconocido",
+    "programa": "CER-M",
+    "estado": "activa",
+    "fechaAlta": "Desconocido",
+    "contacto": {
+      "protectora": "FeliniSave",
+      "email": "felinisave@gmail.com"
+    },
+    "descripcion": "Colonia deducida de su punto de alimentación; no figura por separado en el censo de 2025.",
+    "puntoAlimentacion": {
+      "numero": 9,
+      "nombre": "Campo de Rugby",
+      "ubicacion": "En la calle San Francisco 108, frente al campo de rugby",
+      "fotos": [
+        "img/puntos-alimentacion/pa-09-1.jpg",
+        "img/puntos-alimentacion/pa-09-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "colonia-41",
+    "nombre": "Ermita Virgen de las Viñas",
+    "zona": "Virgen de las Viñas",
+    "lat": 41.6828184,
+    "lng": -3.6864247,
+    "numGatos": "Desconocido",
+    "programa": "CER-M",
+    "estado": "activa",
+    "fechaAlta": "Desconocido",
+    "contacto": {
+      "protectora": "FeliniSave",
+      "email": "felinisave@gmail.com"
+    },
+    "descripcion": "Colonia deducida de su punto de alimentación; no figura por separado en el censo de 2025.",
+    "puntoAlimentacion": {
+      "numero": 11,
+      "nombre": "Ermita Virgen de las Viñas",
+      "ubicacion": "En los jardines, a la derecha de la ermita",
+      "fotos": [
+        "img/puntos-alimentacion/pa-11-1.jpg",
+        "img/puntos-alimentacion/pa-11-2.jpg"
       ]
     }
   }
