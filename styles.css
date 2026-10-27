@@ -34,7 +34,7 @@
   --paper: #f4f4f4;
   --ink: #303030;
   --line: #dfe1e5;
-  --slate-500: #8a8a8a;
+  --slate-500: #6b6b6b;
   --slate-600: #646464;
   --slate-700: #4a4a4a;
   --slate-900: #202020;
@@ -87,7 +87,7 @@ main.container { padding-bottom: 3rem; }
   text-transform: uppercase;
   letter-spacing: .3em;
   font-weight: 600;
-  color: var(--brand-500);
+  color: var(--brand-600);
 }
 .brand__title {
   font-family: var(--font-display);
@@ -551,7 +551,10 @@ main.container { padding-bottom: 3rem; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.25rem;
+  /* Reserva el alto de las tarjetas (se pintan por JS) para que el pie no salte al cargar. */
+  min-height: 21.5rem;
 }
+@media (max-width: 599px) { .shelters { min-height: 42rem; } }
 .shelter-card {
   display: flex;
   flex-direction: column;
@@ -653,11 +656,11 @@ main.container { padding-bottom: 3rem; }
 }
 /* Aceptar y Denegar con el mismo aspecto (la AEPD pide que rechazar sea tan fácil y visible como aceptar). */
 .analytics-consent-deny,
-.analytics-consent-accept { background: var(--brand-500); color: #fff; }
+.analytics-consent-accept { background: var(--brand-600); color: #fff; }
 .analytics-consent-deny:hover,
 .analytics-consent-deny:focus-visible,
 .analytics-consent-accept:hover,
-.analytics-consent-accept:focus-visible { background: var(--brand-600); }
+.analytics-consent-accept:focus-visible { background: var(--brand-700); }
 
 /* ===== Visor emergente de fotos de los puntos de alimentación ===== */
 .foto-visor {
