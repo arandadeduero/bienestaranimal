@@ -1,0 +1,31 @@
+index.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 28
+protectoras/index.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 29
+styles.css
+  s_adeb6d14a6651f::t_af63ac6233e25a 346
+404.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 11
+archivo/index.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 29
+mapa-colonias/index.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 31
+info/index.html
+  s_adeb6d14a6651f::t_af63ac6233e25a 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dad3f27c6972311e7d49d8504e85ac23dded64f5",
+  "prompts": {},
+  "sessions": {
+    "s_adeb6d14a6651f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71e36f20-19d3-4786-89f7-a49514688bb6",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
