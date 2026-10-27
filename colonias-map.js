@@ -16,9 +16,11 @@
     String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const map = L.map(mapEl).setView(ARANDA_CENTER, 14);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  // Mapa base gris del IGN (organismo público español, CC BY 4.0): las teselas no pasan por
+  // servidores de terceros y el gris deja destacar los marcadores naranjas.
+  L.tileLayer('https://www.ign.es/wmts/ign-base?request=getTile&layer=IGNBase-gris&TileMatrixSet=GoogleMapsCompatible&TileMatrix={z}&TileCol={x}&TileRow={y}&format=image/jpeg', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+    attribution: '&copy; <a href="https://www.ign.es/" target="_blank" rel="noopener">Instituto Geográfico Nacional de España</a>',
   }).addTo(map);
 
   const gatosLabel = (n) => {

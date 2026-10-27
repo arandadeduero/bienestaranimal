@@ -31,7 +31,7 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
   público. Son protectoras y asociaciones independientes, sin relación con el Ayuntamiento — la
   página lo indica explícitamente.
 - **Colonias y puntos de alimentación** (`/mapa-colonias/`): mapa ([Leaflet](https://leafletjs.com/), alojado en `vendor/leaflet/`,
-  + teselas de OpenStreetMap, sin API key) con **un único modelo: la colonia**. Si una colonia tiene
+  + mapa base gris del IGN, sin API key) con **un único modelo: la colonia**. Si una colonia tiene
   un punto de alimentación autorizado (los cajones de madera de ASADEMA que el Ayuntamiento instala
   con FeliniSave; 7 en la primera fase de octubre de 2026 y 13 en total a fecha de 27/10/2026), ese punto es lo principal: marcador
   naranja numerado con el nº del cartel, ficha con sus fotos y listado propio arriba. El resto de
@@ -101,7 +101,7 @@ archivado) antes de darlos por buenos.
 | `index.html`, `archivo/`, `protectoras/`, `mapa-colonias/`, `info/` | Las cinco páginas (comparten `styles.css`). |
 | `nav.js` | Menú hamburguesa en móvil. |
 | `analytics.js` | Google Analytics 4 con consentimiento explícito (banner «Aceptar»/«Denegar»). |
-| `colonias-map.js` | Mapa y fichas de colonias y puntos de alimentación (Leaflet + OpenStreetMap) en `/mapa-colonias/`. |
+| `colonias-map.js` | Mapa y fichas de colonias y puntos de alimentación (Leaflet + mapa base del IGN) en `/mapa-colonias/`. |
 | `recogidas.js` | Fichas del servicio municipal de recogida en la portada (`/`). |
 | `archivo.js` | Listado enlazado a issues de GitHub en `/archivo/`. |
 | `scripts/lib.mjs` | `parseIssueBody`: parser línea a línea del cuerpo de un issue form. |
