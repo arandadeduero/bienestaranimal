@@ -1,0 +1,27 @@
+.github/workflows/deploy-pages.yml
+  s_6557ec3ddf2a33::t_ec6b2b732ad74a 27-28
+.gitignore
+  s_6557ec3ddf2a33::t_ec6b2b732ad74a 4
+scripts/build-sitemap.mjs
+  s_6557ec3ddf2a33::t_ec6b2b732ad74a 1-48
+README.md
+  s_6557ec3ddf2a33::t_ec6b2b732ad74a 109
+CLAUDE.md
+  s_6557ec3ddf2a33::t_ec6b2b732ad74a 25-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "543b422e359cf092328e5a737a2823beeb737ae9",
+  "prompts": {},
+  "sessions": {
+    "s_6557ec3ddf2a33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "526b9113-b052-44b1-bc18-bad52002ba77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}

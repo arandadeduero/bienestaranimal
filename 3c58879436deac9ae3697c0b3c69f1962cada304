@@ -1,0 +1,49 @@
+index.html
+  s_6557ec3ddf2a33::t_6c787e308abb32 8,14,23,108
+  s_6557ec3ddf2a33::t_ecc75a914b197e 7,13,22,59,85,107,113-114
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 6,19-20,25,28-53
+  s_6557ec3ddf2a33::t_dd1b2ff12c84d0 27
+mapa-colonias/index.html
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 6,20-21,26
+  s_6557ec3ddf2a33::t_ecc75a914b197e 8-9,14-15,23-24,28-29,32-41,47,103-104,124
+  s_6557ec3ddf2a33::t_dd1b2ff12c84d0 31
+sitemap.xml
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 1-8
+styles.css
+  s_6557ec3ddf2a33::t_ecc75a914b197e 364
+robots.txt
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 1-4
+archivo/index.html
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 6,20-21,26
+  s_6557ec3ddf2a33::t_ecc75a914b197e 8-9,14-15,23-24,29-38,44,82-83
+  s_6557ec3ddf2a33::t_dd1b2ff12c84d0 28
+info/index.html
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 6,20-21,26
+  s_6557ec3ddf2a33::t_3be4e33db50224 8,14,23
+  s_6557ec3ddf2a33::t_ecc75a914b197e 9,15,24,29-38,44,69,124,161-162
+  s_6557ec3ddf2a33::t_dd1b2ff12c84d0 28
+404.html
+  s_6557ec3ddf2a33::t_3be4e33db50224 1-12,14-39,42-60
+  s_6557ec3ddf2a33::t_f5197880218fab 40-41
+  s_6557ec3ddf2a33::t_370c0f81bf2790 13
+protectoras/index.html
+  s_6557ec3ddf2a33::t_c71c73ac8187fc 6,20-21,26
+  s_6557ec3ddf2a33::t_ecc75a914b197e 8-9,14-15,23-24,29-38,44,81-82
+  s_6557ec3ddf2a33::t_dd1b2ff12c84d0 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3c58879436deac9ae3697c0b3c69f1962cada304",
+  "prompts": {},
+  "sessions": {
+    "s_6557ec3ddf2a33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "526b9113-b052-44b1-bc18-bad52002ba77",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
