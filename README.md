@@ -4,7 +4,7 @@ Web del **Ayuntamiento de Aranda de Duero** sobre el servicio municipal de recog
 y el programa de colonias felinas del municipio, con un directorio informativo de las
 protectoras y asociaciones de animales que trabajan en Aranda de forma independiente.
 
-**En vivo:** <https://bienestaranimal.arandadeduero.dev>
+**En vivo:** <https://bienestaranimal.arandadeduero.es>
 
 Sitio **estático** (HTML/CSS/JS vanilla, sin build ni framework), servido por **GitHub Pages**.
 Los datos se editan a mano en el repo o se generan mediante un flujo de **GitHub Issues → PR →
@@ -149,7 +149,7 @@ python3 -m http.server                              # sirve el sitio en localhos
   transitorio: relanzar *Desplegar en GitHub Pages*.
 - **Añadir/quitar protectora o contactos/logos:** editar `shelters.json` (y opcionalmente subir
   `img/shelters/<username>.jpg`). Nada más.
-- **Verificar en vivo** saltando la caché del CDN: `curl "https://bienestaranimal.arandadeduero.dev/data/animales-recogidos.json?cb=$RANDOM"`.
+- **Verificar en vivo** saltando la caché del CDN: `curl "https://bienestaranimal.arandadeduero.es/data/animales-recogidos.json?cb=$RANDOM"`.
 - **CSS/JS con caché.** Cloudflare cachea `styles.css` y los `.js` de forma independiente al
   despliegue de GitHub Pages: cualquier cambio en esos ficheros necesita subir su `?v=N` en
   **todas** las páginas que lo cargan, o el cambio no se verá en producción pese a estar
