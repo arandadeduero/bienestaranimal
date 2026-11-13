@@ -1,0 +1,42 @@
+protectoras/index.html
+  s_11a4213d490485::t_47aba50edc8f99 29
+styles.css
+  s_11a4213d490485::t_47aba50edc8f99 499-500,502-504
+zonas-caninas.js
+  s_11a4213d490485::t_47aba50edc8f99 28
+comun.js
+  s_11a4213d490485::t_d1a07384ce399d 33-37
+  s_11a4213d490485::t_47aba50edc8f99 30-32,38,54-55,90
+colonias-map.js
+  s_11a4213d490485::t_47aba50edc8f99 108
+archivo/index.html
+  s_11a4213d490485::t_47aba50edc8f99 29,105
+mapa-colonias/index.html
+  s_11a4213d490485::t_47aba50edc8f99 31,129-130
+index.html
+  s_11a4213d490485::t_47aba50edc8f99 28,137
+404.html
+  s_11a4213d490485::t_47aba50edc8f99 11
+zonas-caninas/index.html
+  s_11a4213d490485::t_47aba50edc8f99 31,111-112
+info/index.html
+  s_11a4213d490485::t_47aba50edc8f99 29
+CLAUDE.md
+  s_11a4213d490485::t_a5ceb667b32c49 101-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "639eab49da00bf1bf79d27c60e555521bd453548",
+  "prompts": {},
+  "sessions": {
+    "s_11a4213d490485": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9eaae211-8647-4acc-805a-5e375b13b829",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
