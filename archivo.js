@@ -5,13 +5,7 @@
   const emptyEl = document.getElementById('archivo-empty');
   if (!listEl) return;
 
-  const escapeHtml = (s) =>
-    (s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-  const fmtFecha = (iso) => {
-    const d = new Date(`${iso}T00:00:00`);
-    return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
-  };
+  const { escapeHtml, fmtFecha } = BA; // comun.js
 
   // Subir DATA_VERSION cada vez que cambie data/archivo.json (lo hace solo el workflow de archivado):
   // el JSON se cachea en Cloudflare/GitHub Pages y sin versión se verían datos antiguos.

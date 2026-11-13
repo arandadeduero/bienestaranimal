@@ -1,27 +1,19 @@
 // Bienestar Animal Aranda — mapa de colonias felinas y puntos de alimentación autorizados
-// (Leaflet + teselas de OpenStreetMap).
+// (Leaflet + mapa base del IGN; utilidades comunes en comun.js).
 //
 // Un único modelo: la colonia. Si una colonia tiene `puntoAlimentacion`, ese punto es lo
 // principal (marcador numerado, ficha con fotos, listado propio arriba); si no, es una colonia
 // "a secas" (punto discreto, listado de abajo).
 (function () {
-  const ARANDA_CENTER = [41.6708, -3.6892]; // Aranda de Duero (centro aprox.)
   const mapEl = document.getElementById('colonias-map');
   const puntosEl = document.getElementById('puntos-list');
   const coloniasEl = document.getElementById('colonias-list');
   const emptyEl = document.getElementById('colonias-empty');
   if (!mapEl || typeof L === 'undefined') return;
 
-  const escapeHtml = (s) =>
-    String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-  const map = L.map(mapEl).setView(ARANDA_CENTER, 14);
-  // Mapa base gris del IGN (organismo público español, CC BY 4.0): las teselas no pasan por
-  // servidores de terceros y el gris deja destacar los marcadores naranjas.
-  L.tileLayer('https://www.ign.es/wmts/ign-base?request=getTile&layer=IGNBase-gris&TileMatrixSet=GoogleMapsCompatible&TileMatrix={z}&TileCol={x}&TileRow={y}&format=image/jpeg', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.ign.es/" target="_blank" rel="noopener">Instituto Geográfico Nacional de España</a>',
-  }).addTo(map);
+  const { escapeHtml } = BA;
+  const map = BA.crearMapa(mapEl);
+  BA.visorFotos();
 
   const gatosLabel = (n) => {
     if (n == null || n === '') return '';
@@ -33,15 +25,7 @@
   const GENERICA = 'Colonia felina urbana incluida en el censo municipal de 2025.';
   const notaPropia = (c) => (c.descripcion && c.descripcion !== GENERICA ? c.descripcion : '');
 
-  // Miniaturas de las fotos del punto; cada una abre la foto ampliada en un visor emergente (ver más abajo).
-  const fotosHtml = (p, cls) => {
-    const fotos = Array.isArray(p.fotos) ? p.fotos : [];
-    if (!fotos.length) return '';
-    return `<div class="${cls}">` + fotos.map((src, i) =>
-      `<a href="${escapeHtml(src)}">` +
-      `<img src="${escapeHtml(src)}" alt="Punto nº ${escapeHtml(p.numero)}, ${escapeHtml(p.nombre)}: foto ${i + 1}" width="120" height="160"></a>`
-    ).join('') + '</div>';
-  };
+  const fotosHtml = (p, cls) => BA.fotosHtml(p.fotos, cls, `Punto nº ${p.numero}, ${p.nombre}`);
 
   // Nombre del censo solo si aporta algo distinto al nombre del punto.
   const coloniaAparte = (c, p) => (p.nombre && p.nombre !== c.nombre ? c.nombre : '');
@@ -66,49 +50,14 @@
       ${fotosHtml(p, 'pa-photos')}`;
   }
 
-  // <li> clicable/enfocable por teclado que centra el mapa y abre el popup de su marcador.
-  // offsetY desplaza el centro al norte: el popup se abre encima del marcador y, con fotos,
-  // es alto — así el marcador queda por debajo del centro y el popup entra entero.
+  // Ficha del listado; si la colonia está en el mapa, al pulsarla se centra y abre su popup.
   function addFocusable(container, cls, marker, c, html, offsetY) {
     const li = document.createElement('li');
     li.className = cls;
     li.innerHTML = html;
-    if (marker) {
-      li.tabIndex = 0;
-      const focus = () => {
-        const target = map.unproject(map.project([c.lat, c.lng], 17).subtract([0, offsetY]), 17);
-        map.setView(target, 17, { animate: false });
-        marker.openPopup();
-      };
-      li.addEventListener('click', (e) => { if (!e.target.closest('a')) focus(); });
-      li.addEventListener('keydown', (e) => {
-        if (e.target === li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); focus(); }
-      });
-    }
+    if (marker) BA.fichaEnMapa(li, map, marker, [c.lat, c.lng], offsetY);
     container.appendChild(li);
   }
-
-  // Ampliar las fotos en una ventana emergente (<dialog>) en vez de abrirlas en otra pestaña.
-  // El listener va en fase de captura porque Leaflet corta la propagación de los clics dentro
-  // de los popups del mapa.
-  const visor = document.createElement('dialog');
-  visor.className = 'foto-visor';
-  visor.setAttribute('aria-label', 'Foto ampliada');
-  visor.innerHTML = '<button class="foto-visor__close" type="button" aria-label="Cerrar">✕</button><img alt="">';
-  document.body.appendChild(visor);
-  const visorImg = visor.querySelector('img');
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('.pa-photos a, .punto-card__photos a');
-    if (!a) return;
-    e.preventDefault();
-    e.stopPropagation();
-    visorImg.src = a.getAttribute('href');
-    visorImg.alt = a.querySelector('img')?.alt || '';
-    visor.showModal();
-  }, true);
-  // Clic fuera de la foto (fondo) o en la ✕ cierra el visor; Esc lo cierra de serie.
-  visor.addEventListener('click', (e) => { if (e.target !== visorImg) visor.close(); });
-  visor.addEventListener('close', () => { visorImg.removeAttribute('src'); });
 
   // Subir DATA_VERSION cada vez que cambie data/colonias.json: Cloudflare/GitHub Pages lo cachean
   // y, sin versión en la URL, los visitantes seguirían viendo los datos antiguos tras el despliegue.
@@ -172,8 +121,7 @@
           </div>`, 120);
       }
 
-      if (bounds.length > 1) map.fitBounds(bounds, { padding: [30, 30] });
-      else if (bounds.length === 1) map.setView(bounds[0], 16);
+      BA.encuadrar(map, bounds);
     })
     .catch(() => { emptyEl.hidden = false; });
 })();

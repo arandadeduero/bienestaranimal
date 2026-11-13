@@ -1,11 +1,6 @@
+// Bienestar Animal Aranda — fichas del servicio municipal de recogida en la portada (utilidades en comun.js).
 (function () {
-  const esc = (s) => (s || '').replace(/[&<>"']/g, (c) =>
-    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-  const fmtFecha = (iso) => {
-    const d = new Date(`${iso}T00:00:00`);
-    return Number.isNaN(d.getTime()) ? iso : d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
-  };
+  const { escapeHtml: esc, fmtFecha } = BA;
 
   // Subir DATA_VERSION cada vez que cambie data/animales-recogidos.json (lo hacen solos los
   // workflows de alta y archivado): el JSON se cachea y sin versión se verían datos antiguos.

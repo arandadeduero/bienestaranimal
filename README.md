@@ -46,6 +46,11 @@ publicación** (ver más abajo); no hay ningún proceso automático (cron) que r
   `img/puntos-alimentacion/<id>-<n>.jpg`. Los puntos 1, 2, 3, 5, 8, 10, 12 y 13 se asociaron a su colonia del
   censo por nombre y coordenadas; si alguna asociación no es correcta basta con editar
   `data/colonias.json`.
+- **Zonas de esparcimiento canino** (`/zonas-caninas/`): mapa (mismo Leaflet + IGN que el de
+  colonias) con los recintos vallados donde los perros pueden estar sueltos, cada uno con su ficha y
+  fotos. Datos en [`data/zonas-caninas.json`](data/zonas-caninas.json), un array de
+  `{nombre, lat, lng, descripcion, fotos[]}`; fotos en `img/zonas-caninas/`. Por ahora una: Parque
+  Virgen de las Viñas. Solo datos prácticos, sin texto institucional.
 - **Info** (`/info/`): 4 tarjetas de estadísticas reales del programa de colonias felinas (censo
   de FeliniSave, mayo 2025), un resumen del marco legal (Ley 7/2023) y el método CER, enlace de
   descarga a la presentación completa en PDF, una nota sobre los puntos de alimentación autorizados
@@ -98,12 +103,14 @@ archivado) antes de darlos por buenos.
 
 | Ruta | Qué es |
 |---|---|
-| `index.html`, `archivo/`, `protectoras/`, `mapa-colonias/`, `info/` | Las cinco páginas (comparten `styles.css`). |
+| `index.html`, `archivo/`, `protectoras/`, `mapa-colonias/`, `zonas-caninas/`, `info/` | Las seis páginas (comparten `styles.css`). |
 | `nav.js` | Menú hamburguesa en móvil. |
 | `analytics.js` | Google Analytics 4 con consentimiento explícito (banner «Aceptar»/«Denegar»). |
+| `comun.js` | Utilidades compartidas (`window.BA`): `escapeHtml`, `fmtFecha`, mapa base del IGN, encuadre, miniaturas de fotos, ficha que centra el mapa y visor de fotos (`<dialog>`). Se carga antes del script de cada página. |
 | `colonias-map.js` | Mapa y fichas de colonias y puntos de alimentación (Leaflet + mapa base del IGN) en `/mapa-colonias/`. |
 | `recogidas.js` | Fichas del servicio municipal de recogida en la portada (`/`). |
 | `archivo.js` | Listado enlazado a issues de GitHub en `/archivo/`. |
+| `zonas-caninas.js` | Mapa y fichas de las zonas de esparcimiento canino en `/zonas-caninas/`. |
 | `scripts/lib.mjs` | `parseIssueBody`: parser línea a línea del cuerpo de un issue form. |
 | `scripts/parse-animal-issue.mjs` | Valida un issue "Animal recogido" y genera su ficha (ver arriba). |
 | `scripts/vendor-leaflet.mjs` | Descarga una versión de Leaflet de npm a `vendor/leaflet/` y versiona su carga en el mapa; lo usa `leaflet-update.yml`. |
@@ -114,6 +121,8 @@ archivado) antes de darlos por buenos.
 | `vendor/leaflet/` | Leaflet alojado en el propio sitio (JS, CSS, imágenes, licencia BSD-2 y `VERSION`); no se carga de ningún CDN. |
 | `fonts/` | Tipografía Outfit variable (300–800, subconjuntos latin y latin-ext, `.woff2`, licencia OFL) alojada en el propio sitio: no se hacen peticiones a Google Fonts (RGPD). |
 | `img/puntos-alimentacion/` | Fotos de cada punto, `<id>-<n>.jpg` (p. ej. `pa-01-1.jpg`), reducidas a 1000 px de lado largo; se enlazan desde `puntoAlimentacion.fotos` en `data/colonias.json`. |
+| `data/zonas-caninas.json` | Zonas de esparcimiento canino que pinta `/zonas-caninas/` (edición manual). |
+| `img/zonas-caninas/` | Fotos de cada zona, reducidas a 640 px de lado largo (~70–85 KB). |
 | `data/animales-recogidos.json` | Fichas del servicio municipal de recogida que pinta la portada (`/`) (edición manual o por issue). |
 | `data/archivo.json` | Fichas retiradas de la portada, con enlace a su issue original, que pinta `/archivo/`. |
 | `img/` | `logo-web.jpg` (icono/marca), `og.jpg` (vista previa social), `placeholder.svg` (imagen de respaldo), `cartel-colonia-felina.jpg` (en `/info/`), `shelters/<username>.jpg` (logos de protectoras), `recogida-issue-<n>.jpg` (fotos añadidas por el flujo de issues). |

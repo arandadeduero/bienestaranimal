@@ -9,8 +9,8 @@ versión en la URL, los visitantes siguen viendo la versión antigua. **Cada vez
 un `.js`, un `.json` o un `.css`, hay que subir su versión en el mismo commit:**
 
 - **CSS y JS** (`styles.css`, `nav.js`, `analytics.js`, `colonias-map.js`, `recogidas.js`,
-  `archivo.js`…): subir el `?v=N` en **todas** las páginas HTML que lo cargan (`index.html` y
-  `*/index.html`). Buscar con `grep -rn "<fichero>?v=" .` para no dejarse ninguna.
+  `zonas-caninas.js`, `comun.js`, `archivo.js`…): subir el `?v=N` en **todas** las páginas
+  HTML que lo cargan (`index.html` y `*/index.html`). Buscar con `grep -rn "<fichero>?v=" .` para no dejarse ninguna.
 - **Fuentes** (`fonts/*.woff2`): subir el `?v=` tanto en el `url()` del `@font-face` de `styles.css` como en
   el `<link rel="preload">` de cada HTML (deben coincidir exactamente o el preload no sirve).
 - **JSON de datos** (`data/*.json`): subir la versión con la que el script que lo lee lo pide
@@ -30,6 +30,16 @@ que consuma una regla del CSS, como hace `nav.js` con `.nav-dropdown__menu--fixe
 Los JSON que modifican los workflows de issues (`animales-recogidos.json`, `archivo.json`) los versiona
 el propio workflow con `scripts/bump-data-version.mjs` (sube `DATA_VERSION` y el `?v=` del HTML en la
 misma PR). Si se añade un JSON nuevo que toque un workflow, hay que llamar a ese script también.
+
+## Código compartido
+
+Lo que usan varias páginas va en `comun.js` (`window.BA`: `escapeHtml`, `fmtFecha`, `crearMapa`
+con el mapa base del IGN, `encuadrar`, `fotosHtml`, `fichaEnMapa`, `visorFotos`), cargado con
+`defer` justo antes del script de cada página. No volver a copiar estas funciones en los scripts de
+página: añadirlas o cambiarlas en `comun.js` y subir su `?v=` en todas las páginas que lo cargan.
+`DATA_VERSION` se queda en cada script de página (lo sube `scripts/bump-data-version.mjs`).
+La cabecera, el menú y el pie se repiten en cada HTML a propósito (no hay build): al añadir una
+página, copiar una existente y añadir su enlace al menú de todas, incluida `404.html`.
 
 ## Leaflet
 
@@ -51,7 +61,9 @@ las que no deban indexarse (p. ej. `404.html`) llevan `<meta name="robots" conte
   (`deploy-pages.yml`) en https://bienestaranimal.arandadeduero.es. No hay build ni secrets.
 - Idioma: español en todo el contenido, commits y mensajes al usuario.
 - Páginas: portada (servicio municipal de recogida: Policía Local 947 51 26 46, 24 h, sin dirección
-  física), `/info`, `/protectoras`, `/mapa-colonias`, `/archivo`.
+  física), `/info`, `/protectoras`, `/mapa-colonias`, `/zonas-caninas`, `/archivo`.
+- `/zonas-caninas` (datos en `data/zonas-caninas.json`, fotos en `img/zonas-caninas/`): solo datos
+  prácticos de cada zona, sin texto político ni institucional.
 - **Las protectoras son independientes del Ayuntamiento**: solo aparecen en `/protectoras`, con la
   nota de que se muestran a nivel informativo. Nunca en la portada, los issues ni el archivo.
 - Ficha de animal recogido: foto, fecha de recogida, lugar de recogida y situación.
@@ -81,6 +93,6 @@ las que no deban indexarse (p. ej. `404.html`) llevan `<meta name="robots" conte
   usa `position:fixed` calculado desde JS en escritorio.
 - Leaflet: los popups altos con fotos necesitan `animate:false`, desplazamiento al norte y
   `keepInView`; `loading="lazy"` no carga dentro de popups.
-- `escapeHtml` debe aceptar números (`String(s ?? '')`); un `TypeError` ahí queda oculto por el
+- `escapeHtml` (en `comun.js`) debe aceptar números (`String(s ?? '')`); un `TypeError` ahí queda oculto por el
   `.catch` y la página parece vacía.
 - En el navegador de pruebas, el servidor local cachea el JSON: usar `fetch(url,{cache:'reload'})`.
