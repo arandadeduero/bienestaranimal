@@ -19,10 +19,32 @@
 
   const fotosHtml = (z, cls) => (z.fotos || []).length
     ? `<div class="${cls}">` + z.fotos.map((src, i) =>
-      `<a href="${escapeHtml(src)}" target="_blank" rel="noopener">` +
+      `<a href="${escapeHtml(src)}">` +
       `<img src="${escapeHtml(src)}" alt="Zona canina ${escapeHtml(z.nombre)}: foto ${i + 1}" width="120" height="160"></a>`
     ).join('') + '</div>'
     : '';
+
+  // Ampliar las fotos en una ventana emergente (<dialog>) en vez de abrirlas en otra pestaña.
+  // El listener va en fase de captura porque Leaflet corta la propagación de los clics dentro
+  // de los popups del mapa.
+  const visor = document.createElement('dialog');
+  visor.className = 'foto-visor';
+  visor.setAttribute('aria-label', 'Foto ampliada');
+  visor.innerHTML = '<button class="foto-visor__close" type="button" aria-label="Cerrar">✕</button><img alt="">';
+  document.body.appendChild(visor);
+  const visorImg = visor.querySelector('img');
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('.pa-photos a, .punto-card__photos a');
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    visorImg.src = a.getAttribute('href');
+    visorImg.alt = a.querySelector('img')?.alt || '';
+    visor.showModal();
+  }, true);
+  // Clic fuera de la foto (fondo) o en la ✕ cierra el visor; Esc lo cierra de serie.
+  visor.addEventListener('click', (e) => { if (e.target !== visorImg) visor.close(); });
+  visor.addEventListener('close', () => { visorImg.removeAttribute('src'); });
 
   // Subir DATA_VERSION cada vez que cambie data/zonas-caninas.json (caché de Cloudflare/GitHub Pages).
   const DATA_VERSION = 1;
