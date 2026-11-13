@@ -105,7 +105,7 @@
             }),
             zIndexOffset: 1000,
             title: `Punto de alimentación nº ${p.numero}: ${p.nombre}`,
-          }).addTo(map).bindPopup(popupHtml(c), { maxWidth: 300, autoPanPadding: [20, 20], keepInView: true });
+          }).addTo(map).bindPopup(popupHtml(c), BA.popupFotos(map, 300));
         }
         const gatos = gatosLabel(c.numGatos);
         const aparte = coloniaAparte(c, p);

@@ -27,6 +27,15 @@
     else if (bounds.length === 1) map.setView(bounds[0], 16);
   }
 
+  // Opciones de un popup con fotos: en móvil el mapa es más estrecho que el popup, así que el
+  // ancho se limita al del mapa menos el relleno del popup (46px) y el margen de autoPan (2×20).
+  // shortcut: se calcula al crear el marcador, no al girar el móvil; recalcular en 'resize' si molesta.
+  // minWidth = maxWidth: si no, el popup se ajusta al texto y las fotos (que encogen) quedan diminutas.
+  const popupFotos = (map, ancho) => {
+    const w = Math.min(ancho, map.getContainer().clientWidth - 86);
+    return { minWidth: w, maxWidth: w, autoPanPadding: [20, 20], keepInView: true };
+  };
+
   // Miniaturas que abre el visor de fotos (cada <a> apunta a la foto completa).
   const fotosHtml = (fotos, cls, alt) => {
     if (!Array.isArray(fotos) || !fotos.length) return '';
@@ -42,6 +51,8 @@
   function fichaEnMapa(li, map, marker, latlng, offsetY) {
     li.tabIndex = 0;
     const focus = () => {
+      // El listado está debajo del mapa: sin esto, en móvil el popup se abre fuera de pantalla.
+      map.getContainer().scrollIntoView({ block: 'center' });
       const target = map.unproject(map.project(latlng, 17).subtract([0, offsetY]), 17);
       map.setView(target, 17, { animate: false });
       marker.openPopup();
@@ -76,5 +87,5 @@
     visor.addEventListener('close', () => { visorImg.removeAttribute('src'); });
   }
 
-  window.BA = { escapeHtml, fmtFecha, crearMapa, encuadrar, fotosHtml, fichaEnMapa, visorFotos };
+  window.BA = { escapeHtml, fmtFecha, crearMapa, encuadrar, popupFotos, fotosHtml, fichaEnMapa, visorFotos };
 })();

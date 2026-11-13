@@ -25,7 +25,7 @@
           icon: L.divIcon({ className: 'map-pin map-pin--punto map-pin--zona', html: '<span>🐕</span>', iconSize: [32, 32] }),
           title: `Zona de esparcimiento canino: ${z.nombre}`,
         }).addTo(map).bindPopup(`<strong>${escapeHtml(z.nombre)}</strong>${fotosHtml(z, 'pa-photos')}`,
-          { maxWidth: 400, autoPanPadding: [20, 20], keepInView: true });
+          BA.popupFotos(map, 400));
 
         const li = document.createElement('li');
         li.className = 'punto-card punto-card--zona';

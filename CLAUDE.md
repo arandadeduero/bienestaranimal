@@ -98,6 +98,10 @@ las que no deban indexarse (p. ej. `404.html`) llevan `<meta name="robots" conte
   y, sin eso, el mapa tapa el menú desplegado.
 - Leaflet: los popups altos con fotos necesitan `animate:false`, desplazamiento al norte y
   `keepInView`; `loading="lazy"` no carga dentro de popups.
+- Popups con fotos: usar `BA.popupFotos(map, ancho)`. En móvil el mapa (~358px) es más estrecho que
+  un popup de 300px con sus márgenes, y `minWidth` debe igualar a `maxWidth` o las fotos encogen.
+  Las fichas del listado están debajo del mapa: `BA.fichaEnMapa` lo trae a la vista al pulsarlas.
+- Probar siempre los mapas también a 390px de ancho: los fallos de popup y menú solo salen ahí.
 - `escapeHtml` (en `comun.js`) debe aceptar números (`String(s ?? '')`); un `TypeError` ahí queda oculto por el
   `.catch` y la página parece vacía.
 - En el navegador de pruebas, el servidor local cachea el JSON: usar `fetch(url,{cache:'reload'})`.

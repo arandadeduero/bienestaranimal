@@ -496,10 +496,12 @@ main.container { padding-bottom: 3rem; }
 .popup-muted { color: var(--slate-500); font-size: .85em; }
 
 .pa-photos { display: flex; gap: .4rem; margin-top: .6rem; }
-.pa-photos a { display: block; line-height: 0; }
+/* Las fotos encogen a partes iguales si el popup es más estrecho que ellas (móvil) */
+.pa-photos a { display: block; flex: 0 1 120px; min-width: 0; line-height: 0; }
 .pa-photos img {
-  width: 120px;
-  height: 160px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: .5rem;
   border: 1px solid var(--line);
