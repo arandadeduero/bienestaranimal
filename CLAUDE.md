@@ -91,6 +91,11 @@ las que no deban indexarse (p. ej. `404.html`) llevan `<meta name="robots" conte
 
 - `.mainnav` tiene `overflow-x:auto`, que recorta el desplegable en vertical: por eso el menú RRSS
   usa `position:fixed` calculado desde JS en escritorio.
+- El menú pasa a hamburguesa por debajo de 1150px (`styles.css` y `isMobileNav` en `nav.js`, que
+  deben coincidir): con más ancho que eso caben justos los enlaces actuales. Al añadir un enlace
+  al menú, medir que `.mainnav` no se recorta (`scrollWidth > clientWidth`) y subir el corte.
+- `.colonias-map` lleva `isolation: isolate`: las capas de Leaflet tienen `z-index` de hasta 1000
+  y, sin eso, el mapa tapa el menú desplegado.
 - Leaflet: los popups altos con fotos necesitan `animate:false`, desplazamiento al norte y
   `keepInView`; `loading="lazy"` no carga dentro de popups.
 - `escapeHtml` (en `comun.js`) debe aceptar números (`String(s ?? '')`); un `TypeError` ahí queda oculto por el

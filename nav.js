@@ -21,7 +21,7 @@
   // con la clase .nav-dropdown__menu--fixed (position:fixed, referido al viewport, no al
   // contenedor con overflow); el JS solo calcula las coordenadas desde el botón y las pasa como
   // variables CSS. En móvil (menú apilado) se quita la clase y manda el CSS.
-  const isMobileNav = () => window.matchMedia('(max-width: 767px)').matches;
+  const isMobileNav = () => window.matchMedia('(max-width: 1149px)').matches;
   const positionMenu = () => {
     if (isMobileNav()) {
       menu.classList.remove('nav-dropdown__menu--fixed');

@@ -236,9 +236,9 @@ main.container { padding-bottom: 3rem; }
 .stat-card__label { font-weight: 700; color: var(--ink); font-size: .95rem; }
 .stat-card__sub { color: var(--slate-500); font-size: .82rem; }
 
-/* velo suave para legibilidad del texto sobre la foto en pantallas estrechas */
-@media (max-width: 767px) {
-  /* Menú hamburguesa */
+/* Menú hamburguesa: por debajo de 1150px los enlaces ya no caben en una fila junto a la marca.
+   El mismo corte está en nav.js (isMobileNav); al añadir un enlace al menú, revisar los dos. */
+@media (max-width: 1149px) {
   .nav-toggle { display: inline-flex; }
   .mainnav {
     display: none;
@@ -429,6 +429,8 @@ main.container { padding-bottom: 3rem; }
   border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  /* Las capas de Leaflet llevan z-index de hasta 1000: sin contexto propio tapan el menú desplegado */
+  isolation: isolate;
 }
 @media (min-width: 768px) { .colonias-map { height: 32rem; } }
 .colonias-list {
@@ -489,6 +491,8 @@ main.container { padding-bottom: 3rem; }
   font-weight: 800;
   line-height: 1;
 }
+/* Zona de esparcimiento canino: mismo marcador que un punto, en verde para no confundirlos */
+.map-pin--zona { background: #15803d; }
 .popup-muted { color: var(--slate-500); font-size: .85em; }
 
 .pa-photos { display: flex; gap: .4rem; margin-top: .6rem; }
@@ -547,6 +551,10 @@ main.container { padding-bottom: 3rem; }
 .punto-card__body strong { color: var(--ink); font-size: 1rem; }
 .punto-card__num { color: #b45309; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 @media (max-width: 420px) { .punto-card { flex-direction: column; } .punto-card__photos img { width: 120px; height: 160px; } }
+/* Ficha de una zona de esparcimiento canino: en verde, como su marcador (va después de .punto-card) */
+.punto-card--zona { border-left-color: #15803d; }
+.punto-card--zona:hover,
+.punto-card--zona:focus-visible { border-color: #15803d; }
 .shelters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

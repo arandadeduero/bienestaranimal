@@ -22,13 +22,13 @@
       for (const z of zonas) {
         bounds.push([z.lat, z.lng]);
         const marker = L.marker([z.lat, z.lng], {
-          icon: L.divIcon({ className: 'map-pin map-pin--punto', html: '<span>🐕</span>', iconSize: [32, 32] }),
+          icon: L.divIcon({ className: 'map-pin map-pin--punto map-pin--zona', html: '<span>🐕</span>', iconSize: [32, 32] }),
           title: `Zona de esparcimiento canino: ${z.nombre}`,
         }).addTo(map).bindPopup(`<strong>${escapeHtml(z.nombre)}</strong>${fotosHtml(z, 'pa-photos')}`,
           { maxWidth: 400, autoPanPadding: [20, 20], keepInView: true });
 
         const li = document.createElement('li');
-        li.className = 'punto-card';
+        li.className = 'punto-card punto-card--zona';
         li.innerHTML = `
           ${fotosHtml(z, 'punto-card__photos')}
           <div class="punto-card__body">
