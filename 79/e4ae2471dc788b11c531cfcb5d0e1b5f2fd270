@@ -1,0 +1,22 @@
+zonas-caninas/index.html
+  s_11a4213d490485::t_eac3b642df91cf 111
+zonas-caninas.js
+  s_11a4213d490485::t_eac3b642df91cf 22,27-47
+  s_11a4213d490485::t_94f9048cc87f4a 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "79e4ae2471dc788b11c531cfcb5d0e1b5f2fd270",
+  "prompts": {},
+  "sessions": {
+    "s_11a4213d490485": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9eaae211-8647-4acc-805a-5e375b13b829",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
