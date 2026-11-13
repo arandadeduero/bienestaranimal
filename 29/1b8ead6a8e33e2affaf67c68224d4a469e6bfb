@@ -1,0 +1,37 @@
+archivo/index.html
+  s_adeb6d14a6651f::t_6232d758f8f285 88-89
+  s_adeb6d14a6651f::t_9cc4fdd0a8608e 29
+404.html
+  s_adeb6d14a6651f::t_6232d758f8f285 53
+  s_adeb6d14a6651f::t_846eb3dafd55fa 11
+info/index.html
+  s_adeb6d14a6651f::t_6232d758f8f285 167-168
+  s_adeb6d14a6651f::t_222e6af1ace8d7 29
+protectoras/index.html
+  s_adeb6d14a6651f::t_6232d758f8f285 87-88
+  s_adeb6d14a6651f::t_5c148403634715 29
+mapa-colonias/index.html
+  s_adeb6d14a6651f::t_6232d758f8f285 109
+  s_adeb6d14a6651f::t_e830408942aebf 31
+index.html
+  s_adeb6d14a6651f::t_6232d758f8f285 119-120
+  s_adeb6d14a6651f::t_101dc9f113dacf 28
+styles.css
+  s_adeb6d14a6651f::t_25f898c40852a8 654-655,658
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "291b8ead6a8e33e2affaf67c68224d4a469e6bfb",
+  "prompts": {},
+  "sessions": {
+    "s_adeb6d14a6651f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71e36f20-19d3-4786-89f7-a49514688bb6",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}

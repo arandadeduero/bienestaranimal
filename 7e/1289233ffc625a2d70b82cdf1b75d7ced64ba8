@@ -1,0 +1,37 @@
+mapa-colonias/index.html
+  s_f10a5d115ee533::t_98fde62ccd1fff 10,16-17,25,37-38
+.github/workflows/issue-flow-closed.yml
+  s_f10a5d115ee533::t_98fde62ccd1fff 42,49
+CLAUDE.md
+  s_f10a5d115ee533::t_98fde62ccd1fff 51
+robots.txt
+  s_f10a5d115ee533::t_98fde62ccd1fff 4
+protectoras/index.html
+  s_f10a5d115ee533::t_98fde62ccd1fff 10,16-17,25,35-36
+archivo/index.html
+  s_f10a5d115ee533::t_98fde62ccd1fff 10,16-17,25,35-36
+CNAME
+  s_f10a5d115ee533::t_98fde62ccd1fff 1
+info/index.html
+  s_f10a5d115ee533::t_98fde62ccd1fff 10,16-17,25,35-36
+index.html
+  s_f10a5d115ee533::t_98fde62ccd1fff 9,15-16,24,45-46
+README.md
+  s_f10a5d115ee533::t_98fde62ccd1fff 7,152
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e1289233ffc625a2d70b82cdf1b75d7ced64ba8",
+  "prompts": {},
+  "sessions": {
+    "s_f10a5d115ee533": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "98175e15-0c49-4e88-b4a5-3ee525e01216",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}

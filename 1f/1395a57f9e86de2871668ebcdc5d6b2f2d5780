@@ -1,0 +1,23 @@
+mapa-colonias/index.html
+  s_adeb6d14a6651f::t_8c77597c882980 29,110,128
+colonias-map.js
+  s_adeb6d14a6651f::t_8c77597c882980 19-21,23
+README.md
+  s_adeb6d14a6651f::t_8c77597c882980 34,104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f1395a57f9e86de2871668ebcdc5d6b2f2d5780",
+  "prompts": {},
+  "sessions": {
+    "s_adeb6d14a6651f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71e36f20-19d3-4786-89f7-a49514688bb6",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
