@@ -1,0 +1,13 @@
+[
+  {
+    "nombre": "Parque Virgen de las Viñas",
+    "lat": 41.681807,
+    "lng": -3.687567,
+    "descripcion": "Recinto vallado donde los perros pueden estar sueltos, sin correa ni bozal (salvo las razas para las que la normativa lo exige), siempre bajo la supervisión de sus dueños. Tiene accesos sin escalones, juegos para perros, bancos y papeleras.",
+    "fotos": [
+      "img/zonas-caninas/virgen-vinas-1.jpg",
+      "img/zonas-caninas/virgen-vinas-2.jpg",
+      "img/zonas-caninas/virgen-vinas-3.jpg"
+    ]
+  }
+]

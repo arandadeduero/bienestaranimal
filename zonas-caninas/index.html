@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0083c1">
+  <base href="../">
+  <title>Zonas de esparcimiento canino de Aranda de Duero — Bienestar Animal Aranda</title>
+  <meta name="description" content="Mapa de las zonas de esparcimiento canino de Aranda de Duero: recintos vallados donde los perros pueden estar sueltos, con ubicación y fotos.">
+  <link rel="canonical" href="https://bienestaranimal.arandadeduero.es/zonas-caninas/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bienestar Animal Aranda">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Zonas de esparcimiento canino de Aranda de Duero — Bienestar Animal Aranda">
+  <meta property="og:description" content="Mapa de las zonas de esparcimiento canino de Aranda de Duero: recintos vallados donde los perros pueden estar sueltos, con ubicación y fotos.">
+  <meta property="og:url" content="https://bienestaranimal.arandadeduero.es/zonas-caninas/">
+  <meta property="og:image" content="https://bienestaranimal.arandadeduero.es/img/og.jpg?v=4">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Bienestar Animal Aranda, del Ayuntamiento de Aranda de Duero: recogida de animales, colonias felinas y puntos de alimentación autorizados. Un cachorro y un gatito jugando.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zonas de esparcimiento canino de Aranda de Duero — Bienestar Animal Aranda">
+  <meta name="twitter:description" content="Mapa de las zonas de esparcimiento canino de Aranda de Duero: recintos vallados donde los perros pueden estar sueltos, con ubicación y fotos.">
+  <meta name="twitter:image" content="https://bienestaranimal.arandadeduero.es/img/og.jpg?v=4">
+  <meta name="twitter:image:alt" content="Bienestar Animal Aranda, del Ayuntamiento de Aranda de Duero: recogida de animales, colonias felinas y puntos de alimentación autorizados. Un cachorro y un gatito jugando.">
+  <link rel="icon" href="img/logo-web.jpg">
+  <link rel="preload" href="fonts/outfit-latin.woff2?v=1" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://www.ign.es">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css?v=1.9.4">
+  <link rel="stylesheet" href="styles.css?v=28">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://bienestaranimal.arandadeduero.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Zonas caninas", "item": "https://bienestaranimal.arandadeduero.es/zonas-caninas/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <img class="brand__logo" src="img/logo-web.jpg" alt="Bienestar Animal Aranda" width="48" height="48">
+        <span class="brand__text">
+          <span class="brand__kicker">Ayuntamiento de Aranda de Duero</span>
+          <span class="brand__title">Bienestar Animal Aranda</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainnav">☰</button>
+      <nav class="mainnav" id="mainnav" aria-label="Menú principal">
+        <a href="./">Inicio</a>
+        <a href="info/">Info</a>
+        <a href="protectoras/">Protectoras y Asociaciones</a>
+        <a href="mapa-colonias/">Mapa de colonias</a>
+        <a href="zonas-caninas/" class="is-active">Zonas caninas</a>
+        <a href="archivo/">Archivo</a>
+        <div class="nav-dropdown" data-nav-dropdown>
+          <button class="nav-dropdown__toggle" type="button" aria-haspopup="true" aria-expanded="false">RRSS ▾</button>
+          <div class="nav-dropdown__menu">
+            <a href="https://www.instagram.com/ayuntamientoarandadeduero" target="_blank" rel="noopener">📷 Instagram</a>
+            <a href="https://www.facebook.com/aytoarandadeduero" target="_blank" rel="noopener">📘 Facebook</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Zonas de esparcimiento canino</h1>
+    <p class="page-lead">Recintos vallados donde los perros pueden correr y jugar sueltos, siempre bajo
+       la supervisión de sus dueños.</p>
+
+    <div id="zonas-map" class="colonias-map" role="application" aria-label="Mapa de zonas de esparcimiento canino"></div>
+    <p id="zonas-empty" class="empty" hidden>Todavía no hay zonas registradas.</p>
+
+    <h2 class="section-subtitle">Zonas</h2>
+    <ul id="zonas-list" class="puntos-list" aria-label="Zonas de esparcimiento canino"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Servicio municipal de recogida de animales, colonias felinas y puntos de alimentación autorizados
+         de Aranda de Duero. Una web del Ayuntamiento de Aranda de Duero.</p>
+      <p class="fineprint">Cada protectora gestiona sus adopciones de forma independiente y con sus propias normas:
+         puedes contactar con ellas directamente desde la página de Protectoras y Asociaciones.</p>
+      <p class="fineprint">Licencia contenido <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+         · <a href="https://github.com/arandadeduero/bienestaranimal" target="_blank" rel="noopener">Código GitHub</a>
+         · <a href="https://www.arandadeduero.es/politica-privacidad/" target="_blank" rel="noopener">Política de privacidad</a>
+         · Mapa © <a href="https://www.ign.es/" target="_blank" rel="noopener">Instituto Geográfico Nacional de España</a> (CC BY 4.0)</p>
+    </div>
+  </footer>
+
+  <div class="analytics-consent" data-analytics-consent role="region" aria-label="Aviso de privacidad y analítica" hidden>
+    <p class="analytics-consent-text">
+      Usamos Google Analytics para saber cómo se utiliza esta web. El script no se carga ni envía ningún dato hasta que pulsas «Aceptar». Más información en la
+      <a href="https://www.arandadeduero.es/politica-privacidad/" target="_blank" rel="noopener">política de privacidad</a>.
+    </p>
+    <div class="analytics-consent-actions">
+      <button class="analytics-consent-btn analytics-consent-deny" type="button" data-analytics-consent-deny>Denegar</button>
+      <button class="analytics-consent-btn analytics-consent-accept" type="button" data-analytics-consent-accept>Aceptar</button>
+    </div>
+  </div>
+
+  <script src="vendor/leaflet/leaflet.js?v=1.9.4" defer></script>
+  <script src="nav.js?v=5" defer></script>
+  <script src="analytics.js?v=2" defer></script>
+  <script src="zonas-caninas.js?v=1" defer></script>
+</body>
+</html>
